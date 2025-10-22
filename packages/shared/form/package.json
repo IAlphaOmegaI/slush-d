@@ -1,0 +1,35 @@
+{
+  "name": "@zenncore/form",
+  "version": "0.0.0",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .turbo dist node_modules"
+  },
+  "dependencies": {
+    "@zenncore/utils": "workspace:*"
+  },
+  "peerDependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "react-hook-form": "catalog:",
+    "react": "catalog:",
+    "zod": "^4.1.11"
+  },
+  "devDependencies": {
+    "@types/react": "catalog:",
+    "@zenncore/tsdown": "workspace:*",
+    "@zenncore/typescript": "workspace:*",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  }
+}

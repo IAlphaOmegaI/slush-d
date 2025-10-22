@@ -1,0 +1,10 @@
+{
+  "$schema": "https://www.schemastore.org/tsconfig",
+  "extends": "./config.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "declaration": true,
+    "isolatedDeclarations": true
+  },
+  "exclude": ["node_modules", "dist", ".turbo"]
+}

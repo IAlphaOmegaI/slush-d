@@ -1,0 +1,4 @@
+{
+  "extends": "@zenncore/typescript/lib",
+  "include": ["src"]
+}

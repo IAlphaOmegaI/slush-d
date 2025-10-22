@@ -1,0 +1,11 @@
+{
+  "extends": "@zenncore/typescript/lib",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "noEmit": true,
+    "allowImportingTsExtensions": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", ".turbo"]
+}

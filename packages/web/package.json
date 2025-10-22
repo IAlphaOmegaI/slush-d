@@ -1,0 +1,47 @@
+{
+  "name": "@zenncore/web",
+  "version": "0.0.0",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .turbo dist node_modules"
+  },
+  "dependencies": {
+    "@base-ui-components/react": "^1.0.0-beta.3",
+    "@tanstack/react-table": "^8.21.3",
+    "@zenncore/data-table": "workspace:*",
+    "@zenncore/icons": "workspace:*",
+    "@zenncore/phone": "workspace:*",
+    "@zenncore/utils": "workspace:*",
+    "react": "catalog:"
+  },
+  "peerDependencies": {
+    "react-hook-form": "catalog:"
+  },
+  "devDependencies": {
+    "@types/react": "catalog:",
+    "@types/react-dom": "^19.1.9",
+    "@zenncore/tsdown": "workspace:*",
+    "@zenncore/tailwind": "workspace:*",
+    "@zenncore/typescript": "workspace:*",
+    "tailwindcss": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
+  },
+  "exports": {
+    "./components/*": {
+      "types": "./dist/components/*/index.d.ts",
+      "import": "./dist/components/*/index.js"
+    },
+    "./*": {
+      "types": "./dist/*/index.d.ts",
+      "import": "./dist/*/index.js"
+    },
+    "./tailwind": "./src/config/tailwind/globals.css",
+    "./typescript": "./src/config/typescript/config.json"
+  }
+}

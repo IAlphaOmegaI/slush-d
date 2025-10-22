@@ -1,0 +1,7 @@
+@import "@zenncore/tailwind";
+@import "@zenncore/web/tailwind";
+
+@theme {
+  --font-header: "var(--font-knockout)";
+  --font-body: "var(--font-geist)";
+}
