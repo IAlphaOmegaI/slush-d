@@ -8,7 +8,7 @@ export default () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <NavigationMenu />
-      <section className="relative min-h-[90vh] overflow-hidden">
+      <section className="relative min-h-screen h-screen overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/banner.png"
@@ -18,7 +18,7 @@ export default () => {
           />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-8 pt-24 sm:pt-48">
+        <div className="relative z-10 mx-auto pb-24 h-full flex flex-col justify-between max-w-7xl px-4 sm:px-8 pt-24 sm:pt-48">
           <div className="max-w-5xl">
             <Image
               src="/images/logo.svg"
@@ -30,29 +30,28 @@ export default () => {
             <h3 className="mt-2 font-medium font-header text-3xl sm:text-5xl lg:text-7xl">
               30 OCTOBER 2025
             </h3>
-
-            <div className="mt-10 sm:mt-20 flex flex-col sm:flex-row gap-4 sm:gap-8">
-              <div className="group relative overflow-hidden rounded-2xl font-header">
-                <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0" />
-                <div className="relative rounded-2xl border border-accent-foreground bg-gradient-to-br from-background to-black px-8 py-8 backdrop-blur-sm">
-                  <div className="bg-gradient-to-r from-foreground to-gray-300 bg-clip-text font-black text-2xl sm:text-3xl lg:text-5xl text-transparent">
-                    300+ <br /> ATTENDEES
-                  </div>
+          </div>
+          <div className="mt-20 sm:mt-auto flex flex-col sm:flex-row gap-4 sm:gap-8">
+            <div className="group relative overflow-hidden rounded-2xl font-header">
+              <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0" />
+              <div className="relative rounded-2xl border border-accent-foreground bg-gradient-to-br from-background to-black px-8 py-8 backdrop-blur-sm">
+                <div className="bg-gradient-to-r from-foreground to-gray-300 bg-clip-text font-black text-2xl sm:text-3xl lg:text-5xl text-transparent">
+                  300+ <br /> ATTENDEES
                 </div>
               </div>
-              <div className="group relative overflow-hidden rounded-2xl font-header">
-                <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0" />
-                <div className="relative rounded-2xl border-2 border-accent-foreground bg-gradient-to-br from-background to-black px-8 py-8 backdrop-blur-sm">
-                  <div className="bg-gradient-to-r from-foreground to-gray-300 bg-clip-text font-black text-2xl sm:text-3xl lg:text-5xl text-transparent">
-                    ICONIC <br /> SPEAKERS
-                  </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl font-header">
+              <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0" />
+              <div className="relative rounded-2xl border-2 border-accent-foreground bg-gradient-to-br from-background to-black px-8 py-8 backdrop-blur-sm">
+                <div className="bg-gradient-to-r from-foreground to-gray-300 bg-clip-text font-black text-2xl sm:text-3xl lg:text-5xl text-transparent">
+                  ICONIC <br /> SPEAKERS
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <section className="relative mt-24 overflow-hidden bg-background/80 bg-gradient-to-r py-4 backdrop-blur-sm">
+        <section className="absolute bottom-0 left-0 right-0 overflow-hidden bg-background/80 bg-gradient-to-r py-4 backdrop-blur-sm">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent" />
           <div className="animate-scroll whitespace-nowrap font-bold font-header text-lg sm:text-2xl lg:text-3xl text-foreground">
             NOTHING NORMAL EVER CHANGED A DAMN THING. • NOTHING NORMAL EVER
