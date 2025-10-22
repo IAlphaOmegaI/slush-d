@@ -2,6 +2,13 @@ import { withPayload } from "@payloadcms/next/withPayload";
 
 export default withPayload({
   transpilePackages: ["@zenncore/utils", "@zenncore/icons"],
+  serverExternalPackages: [
+    "@payloadcms/db-postgres",
+    "@payloadcms/drizzle",
+    "drizzle-kit",
+    "drizzle-orm",
+    "postgres",
+  ],
   reactStrictMode: false,
   reactCompiler: true,
   experimental: {
@@ -15,29 +22,8 @@ export default withPayload({
     globalNotFound: true,
 
     // Keep Payload and database packages on the server
-    serverComponentsExternalPackages: [
-      "@payloadcms/db-postgres",
-      "@payloadcms/drizzle",
-      "drizzle-kit",
-      "drizzle-orm",
-      "postgres",
-    ],
   },
   typescript: {
     ignoreBuildErrors: true,
-  },
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      // Exclude esbuild binaries from webpack processing
-      config.externals = config.externals || [];
-      config.externals.push({
-        "@esbuild/darwin-arm64": "commonjs @esbuild/darwin-arm64",
-        "@esbuild/darwin-x64": "commonjs @esbuild/darwin-x64",
-        "@esbuild/linux-x64": "commonjs @esbuild/linux-x64",
-        "@esbuild/linux-arm64": "commonjs @esbuild/linux-arm64",
-        esbuild: "commonjs esbuild",
-      });
-    }
-    return config;
   },
 });

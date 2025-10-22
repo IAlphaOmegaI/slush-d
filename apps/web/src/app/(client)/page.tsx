@@ -13,23 +13,29 @@ export default () => {
           <Image
             src="/images/banner.png"
             alt="hero"
-            width={1920}
-            height={1080}
+            fill
+            className="object-cover"
           />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-8 pt-48">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-8 pt-24 sm:pt-48">
           <div className="max-w-5xl">
-            <Image src="/images/logo.svg" alt="logo" width={690} height={100} />
-            <h3 className="mt-2 font-medium font-header text-7xl">
+            <Image
+              src="/images/logo.svg"
+              alt="logo"
+              width={690}
+              height={100}
+              className="w-full h-auto max-w-lg sm:max-w-none"
+            />
+            <h3 className="mt-2 font-medium font-header text-3xl sm:text-5xl lg:text-7xl">
               30 OCTOBER 2025
             </h3>
 
-            <div className="mt-20 flex gap-8">
+            <div className="mt-10 sm:mt-20 flex flex-col sm:flex-row gap-4 sm:gap-8">
               <div className="group relative overflow-hidden rounded-2xl font-header">
                 <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0" />
                 <div className="relative rounded-2xl border border-accent-foreground bg-gradient-to-br from-background to-black px-8 py-8 backdrop-blur-sm">
-                  <div className="bg-gradient-to-r from-foreground to-gray-300 bg-clip-text font-black text-5xl text-transparent">
+                  <div className="bg-gradient-to-r from-foreground to-gray-300 bg-clip-text font-black text-2xl sm:text-3xl lg:text-5xl text-transparent">
                     300+ <br /> ATTENDEES
                   </div>
                 </div>
@@ -37,7 +43,7 @@ export default () => {
               <div className="group relative overflow-hidden rounded-2xl font-header">
                 <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0" />
                 <div className="relative rounded-2xl border-2 border-accent-foreground bg-gradient-to-br from-background to-black px-8 py-8 backdrop-blur-sm">
-                  <div className="bg-gradient-to-r from-foreground to-gray-300 bg-clip-text font-black text-5xl text-transparent">
+                  <div className="bg-gradient-to-r from-foreground to-gray-300 bg-clip-text font-black text-2xl sm:text-3xl lg:text-5xl text-transparent">
                     ICONIC <br /> SPEAKERS
                   </div>
                 </div>
@@ -48,7 +54,7 @@ export default () => {
 
         <section className="relative mt-24 overflow-hidden bg-background/80 bg-gradient-to-r py-4 backdrop-blur-sm">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent" />
-          <div className="animate-scroll whitespace-nowrap font-bold font-header text-3xl text-foreground">
+          <div className="animate-scroll whitespace-nowrap font-bold font-header text-lg sm:text-2xl lg:text-3xl text-foreground">
             NOTHING NORMAL EVER CHANGED A DAMN THING. • NOTHING NORMAL EVER
             CHANGED A DAMN THING. • NOTHING NORMAL EVER CHANGED A DAMN THING. •
           </div>
@@ -58,7 +64,7 @@ export default () => {
       {/* Tickets Section - Exact Design Match */}
       <section id="tickets" className="bg-background py-32">
         <div className="mx-auto max-w-7xl px-8">
-          <div className="mb-16 flex items-center justify-between">
+          <div className="mb-16 flex items-center justify-between md:flex-row flex-col gap-4">
             <div className="relative">
               <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0" />
               <h2 className="mb-2 font-bold font-header text-5xl">
@@ -66,7 +72,7 @@ export default () => {
                 TIRANA SLUSH'D 2025
               </h2>
             </div>
-            <div className="rounded-2xl border border-accent-foreground bg-background-dimmed px-6 py-4 text-right">
+            <div className="rounded-2xl border border-accent-foreground bg-background-dimmed px-6 py-4 text-right w-full md:w-auto">
               <p className="mb-3 font-header font-regular">75% tickets sold</p>
               <div className="flex gap-1">
                 {/* Progress bar segments */}
@@ -235,7 +241,7 @@ export default () => {
             BEHIND THIS
           </h2>
         </div>
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {speakers.map((speaker) => (
             <div key={speaker.name} className="flex flex-col gap-4 p-4">
               <div className="relative w-full relative">
@@ -270,12 +276,12 @@ export default () => {
             TIRANA SLUSH'D 2025
           </h2>
         </div>
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {investors.map((investor) => (
             <Link
               key={investor.href}
               href={investor.href}
-              className="flex flex-col gap-4 p-4"
+              className="flex flex-col gap-4 p-4 items-center justify-center"
             >
               <Image
                 src={investor.image}

@@ -92,7 +92,7 @@ export const Footer = () => {
         <div className="mb-8 h-px bg-accent-foreground" />
 
         {/* Copyright */}
-        <div className="flex items-center justify-between">
+        <div className="flex md:items-center justify-between flex-col md:flex-row gap-4">
           <Image src="/images/logo.svg" alt="logo" width={240} height={100} />
           <p className="text-foreground-dimmed">
             © 2025 TIRANA SLUSH'D. ALL RIGHTS RESERVED.
