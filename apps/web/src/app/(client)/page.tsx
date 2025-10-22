@@ -1,14 +1,14 @@
+import { cn } from "@zenncore/utils";
 import Image from "next/image";
+import Link from "next/link";
 import { Footer } from "@/component/footer";
 import { NavigationMenu } from "@/component/navigation-menu";
-import { cn } from "@zenncore/utils";
-import Link from "next/link";
 
 export default () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <NavigationMenu />
-      <section className="relative min-h-screen h-screen overflow-hidden">
+      <section className="relative h-screen min-h-screen overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/banner.png"
@@ -18,24 +18,24 @@ export default () => {
           />
         </div>
 
-        <div className="relative z-10 mx-auto pb-24 h-full flex flex-col justify-between max-w-7xl px-4 sm:px-8 pt-24 sm:pt-48">
+        <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-between px-4 pt-24 pb-24 sm:px-8 sm:pt-48">
           <div className="max-w-5xl">
             <Image
               src="/images/logo.svg"
               alt="logo"
               width={690}
               height={100}
-              className="w-full h-auto max-w-lg sm:max-w-none"
+              className="h-auto w-full max-w-lg sm:max-w-none"
             />
-            <h3 className="mt-2 font-medium font-header text-3xl sm:text-5xl lg:text-7xl">
+            <h3 className="mt-2 font-header font-medium text-3xl sm:text-5xl lg:text-7xl">
               30 OCTOBER 2025
             </h3>
           </div>
-          <div className="mt-20 sm:mt-auto flex flex-col sm:flex-row gap-4 sm:gap-8">
+          <div className="mt-20 flex flex-col gap-4 sm:mt-auto sm:flex-row sm:gap-8">
             <div className="group relative overflow-hidden rounded-2xl font-header">
               <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0" />
               <div className="relative rounded-2xl border border-accent-foreground bg-gradient-to-br from-background to-black px-8 py-8 backdrop-blur-sm">
-                <div className="bg-gradient-to-r from-foreground to-gray-300 bg-clip-text font-black text-2xl sm:text-3xl lg:text-5xl text-transparent">
+                <div className="bg-gradient-to-r from-foreground to-gray-300 bg-clip-text font-black text-2xl text-transparent sm:text-3xl lg:text-5xl">
                   300+ <br /> ATTENDEES
                 </div>
               </div>
@@ -43,7 +43,7 @@ export default () => {
             <div className="group relative overflow-hidden rounded-2xl font-header">
               <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0" />
               <div className="relative rounded-2xl border-2 border-accent-foreground bg-gradient-to-br from-background to-black px-8 py-8 backdrop-blur-sm">
-                <div className="bg-gradient-to-r from-foreground to-gray-300 bg-clip-text font-black text-2xl sm:text-3xl lg:text-5xl text-transparent">
+                <div className="bg-gradient-to-r from-foreground to-gray-300 bg-clip-text font-black text-2xl text-transparent sm:text-3xl lg:text-5xl">
                   ICONIC <br /> SPEAKERS
                 </div>
               </div>
@@ -51,9 +51,9 @@ export default () => {
           </div>
         </div>
 
-        <section className="absolute bottom-0 left-0 right-0 overflow-hidden bg-background/80 bg-gradient-to-r py-4 backdrop-blur-sm">
+        <section className="absolute right-0 bottom-0 left-0 overflow-hidden bg-background/80 bg-gradient-to-r py-4 backdrop-blur-sm">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent" />
-          <div className="animate-scroll whitespace-nowrap font-bold font-header text-lg sm:text-2xl lg:text-3xl text-foreground">
+          <div className="animate-scroll whitespace-nowrap font-bold font-header text-foreground text-lg sm:text-2xl lg:text-3xl">
             NOTHING NORMAL EVER CHANGED A DAMN THING. • NOTHING NORMAL EVER
             CHANGED A DAMN THING. • NOTHING NORMAL EVER CHANGED A DAMN THING. •
           </div>
@@ -63,7 +63,7 @@ export default () => {
       {/* Tickets Section - Exact Design Match */}
       <section id="tickets" className="bg-background py-32">
         <div className="mx-auto max-w-7xl px-8">
-          <div className="mb-16 flex items-center justify-between md:flex-row flex-col gap-4">
+          <div className="mb-16 flex flex-col items-center justify-between gap-4 md:flex-row">
             <div className="relative">
               <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0" />
               <h2 className="mb-2 font-bold font-header text-5xl">
@@ -71,7 +71,7 @@ export default () => {
                 TIRANA SLUSH'D 2025
               </h2>
             </div>
-            <div className="rounded-2xl border border-accent-foreground bg-background-dimmed px-6 py-4 text-right w-full md:w-auto">
+            <div className="w-full rounded-2xl border border-accent-foreground bg-background-dimmed px-6 py-4 text-right md:w-auto">
               <p className="mb-3 font-header font-regular">75% tickets sold</p>
               <div className="flex gap-1">
                 {/* Progress bar segments */}
@@ -83,10 +83,10 @@ export default () => {
                         ? i < 5
                           ? "bg-gradient-to-t from-green-500 to-green-400"
                           : i < 10
-                          ? "bg-gradient-to-t from-yellow-500 to-yellow-400"
-                          : i < 13
-                          ? "bg-gradient-to-t from-orange-500 to-orange-400"
-                          : "bg-gradient-to-t from-red-500 to-red-400"
+                            ? "bg-gradient-to-t from-yellow-500 to-yellow-400"
+                            : i < 13
+                              ? "bg-gradient-to-t from-orange-500 to-orange-400"
+                              : "bg-gradient-to-t from-red-500 to-red-400"
                         : "bg-accent"
                     }`}
                   />
@@ -105,7 +105,7 @@ export default () => {
                       index === 0 && "from-pink-500 to-red-500",
                       index === 1 && "from-blue-500 to-purple-500",
                       index === 2 && "from-green-500 to-teal-500",
-                      index === 3 && "from-yellow-500 to-orange-500"
+                      index === 3 && "from-yellow-500 to-orange-500",
                     )}
                   >
                     <span className="font-bold text-foreground text-xl">S</span>
@@ -120,7 +120,7 @@ export default () => {
                     index === 0 && "from-pink-500 to-red-500",
                     index === 1 && "from-blue-500 to-purple-500",
                     index === 2 && "from-green-500 to-teal-500",
-                    index === 3 && "from-yellow-500 to-orange-500"
+                    index === 3 && "from-yellow-500 to-orange-500",
                   )}
                 >
                   <h3 className="text-center font-bold font-header">{name}</h3>
@@ -132,7 +132,7 @@ export default () => {
                 </ul>
                 <button
                   type="button"
-                  className="mt-auto w-full rounded-lg border border-accent-foreground bg-background-rich py-3 font-medium font-header hover:cursor-pointer"
+                  className="mt-auto w-full rounded-lg border border-accent-foreground bg-background-rich py-3 font-header font-medium hover:cursor-pointer"
                 >
                   Buy now
                 </button>
@@ -243,7 +243,7 @@ export default () => {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {speakers.map((speaker) => (
             <div key={speaker.name} className="flex flex-col gap-4 p-4">
-              <div className="relative w-full relative">
+              <div className="relative relative w-full">
                 <div className="-skew-x-3 h-100 w-full transform bg-gradient-to-br from-yellow-400 via-orange-500 to-red-600 shadow-2xl" />
 
                 <Image
@@ -255,7 +255,7 @@ export default () => {
               </div>
 
               <div className="flex flex-col">
-                <h3 className="capitalize font-semibold font-header text-lg text-foreground-dimmed">
+                <h3 className="font-header font-semibold text-foreground-dimmed text-lg capitalize">
                   {speaker.title}
                 </h3>
                 <h3 className="mb-4 font-bold font-header text-3xl text-foreground">
@@ -280,7 +280,7 @@ export default () => {
             <Link
               key={investor.href}
               href={investor.href}
-              className="flex flex-col gap-4 p-4 items-center justify-center"
+              className="flex flex-col items-center justify-center gap-4 p-4"
             >
               <Image
                 src={investor.image}
