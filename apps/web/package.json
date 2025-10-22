@@ -10,11 +10,16 @@
     "lint": "biome check --fix --unsafe ."
   },
   "dependencies": {
+    "@payloadcms/db-postgres": "^3.59.1",
+    "@payloadcms/next": "^3.59.1",
+    "@payloadcms/richtext-lexical": "^3.60.0",
+    "@payloadcms/storage-uploadthing": "^3.59.1",
     "@zenncore/icons": "workspace:*",
     "@zenncore/phone": "workspace:*",
     "@zenncore/utils": "workspace:*",
     "@zenncore/web": "workspace:*",
     "babel-plugin-react-compiler": "^19.1.0-rc.2",
+    "clear": "^0.1.0",
     "graphql": "^16.11.0",
     "lowlight": "^3.3.0",
     "motion": "^12.23.6",
