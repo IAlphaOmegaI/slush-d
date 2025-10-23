@@ -347,6 +347,7 @@ export default () => {
                 alt="investor"
                 width={300}
                 height={300}
+                className="brightness-0 invert"
               />
             </Link>
           ))}
@@ -375,6 +376,7 @@ export default () => {
                 alt="investor"
                 width={300}
                 height={300}
+                className="brightness-0 invert"
               />
             </Link>
           ))}
@@ -403,6 +405,36 @@ export default () => {
                 alt="investor"
                 width={300}
                 height={300}
+                className="brightness-0 invert"
+              />
+            </Link>
+          ))}
+        </div>
+      </section>
+      <section className="mx-auto flex max-w-7xl flex-col gap-24 px-8 py-32">
+        <div className="relative">
+          <div className="absolute left-0 z-20 h-full w-1/3 bg-gradient-to-r from-background to-background/0" />
+          <h2 className="mb-2 font-bold font-header text-5xl">
+            OUR PRESS <br />
+            PARTNERS
+          </h2>
+          <h3 className="text-foreground-dimmed text-lg">
+            Dring innovation through shared ambition.
+          </h3>
+        </div>
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
+          {media.map((partner) => (
+            <Link
+              key={partner.href}
+              href={partner.href}
+              className="flex flex-col items-center justify-center gap-4 p-4 w-full h-44 max-h-44"
+            >
+              <Image
+                src={partner.image}
+                alt="investor"
+                width={300}
+                height={300}
+                className="brightness-0 invert"
               />
             </Link>
           ))}
@@ -428,6 +460,7 @@ export default () => {
                 alt="investor"
                 width={300}
                 height={300}
+                className="brightness-0 invert"
               />
             </Link>
           ))}
@@ -916,12 +949,17 @@ const growth = [
   },
   {
     href: "https://www.visitluxembourg.com/",
-    image: "/images/partners/partner-14.png",
+    image: "/images/partners/partner-14.svg",
+  },
+  {
+    href: "https://www.eebrd.com/",
+    image: "/images/partners/partner-16.png",
   },
   {
     href: "https://www.eebrd.com/",
     image: "/images/partners/partner-15.png",
   },
+
   {
     href: "https://www.wbif.eu/wb-edif",
     image: "/images/partners/partner-18.png",
@@ -944,5 +982,20 @@ const sponsors = [
   {
     href: "https://www.easypay.al/",
     image: "/images/partners/partner-13.svg",
+  },
+  {
+    href: "https://digitsapiens.com/",
+    image: "/images/partners/partner-19.png",
+  },
+];
+
+const media = [
+  {
+    href: "https://geekroom.al/en/",
+    image: "/images/partners/partner-20.png",
+  },
+  {
+    href: "https://www.euronews.com/",
+    image: "/images/partners/partner-21.svg",
   },
 ];
