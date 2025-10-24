@@ -96,7 +96,7 @@ export default () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
             {tickets.map(({ name, price, benefits }, index) => (
               <div className="flex h-180 flex-col gap-6 rounded-xl border border-accent-foreground bg-background-dimmed p-4 font-header">
                 <div className="text-center">
@@ -187,7 +187,7 @@ export default () => {
             </h2>
           </div>
 
-          <div className="mx-auto mb-16 grid max-w-4xl grid-cols-2 gap-8 md:grid-cols-2">
+          <div className="mx-auto mb-16 grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
             <div className="relative rounded-lg border border-accent-foreground bg-background-rich p-8 font-header">
               <h3 className="mb-4 font-bold font-header text-3xl text-foreground">
                 $400,000 IN FUNDS
@@ -245,7 +245,7 @@ export default () => {
             AT TIRANA SLUSH'D 2025
           </h2>
         </div>
-        <div className="grid grid-cols-2 gap-8 lg:grid-cols-3" id="speakers">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3" id="speakers">
           {speakers
             .sort((a, b) => a.index - b.index)
             .map((speaker) => (
