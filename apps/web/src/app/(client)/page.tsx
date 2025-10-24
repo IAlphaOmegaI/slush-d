@@ -61,7 +61,7 @@ export default () => {
       </section>
 
       {/* Tickets Section - Exact Design Match */}
-      <section id="tickets" className="bg-background py-32">
+      <section id="tickets" className="bg-background py-16">
         <div className="mx-auto max-w-7xl px-8">
           <div className="mb-16 flex flex-col items-center justify-between gap-4 md:flex-row">
             <div className="relative">
@@ -148,7 +148,7 @@ export default () => {
       </section>
 
       {/* Second Photo Section - Network Visualization Background */}
-      <section className="relative overflow-hidden py-32">
+      <section className="relative overflow-hidden py-16">
         {/* Network visualization background */}
         <div className="absolute inset-0 opacity-40">
           {/* Digital network lines */}
@@ -234,7 +234,6 @@ export default () => {
 
       <section className="mx-auto flex max-w-7xl flex-col gap-24 px-8">
         <div className="relative">
-          <div className="absolute left-0 z-20 h-full w-1/3 bg-gradient-to-r from-background to-background/0" />
           <h2 className="mb-2 font-bold font-header text-5xl">
             THE SPEAKERS <br />
             AT TIRANA SLUSH'D 2025
@@ -271,9 +270,8 @@ export default () => {
         </div>
       </section>
 
-      <section className="mx-auto flex max-w-7xl flex-col gap-24 px-8 py-32">
+      <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16">
         <div className="relative">
-          <div className="absolute left-0 z-20 h-full w-1/3 bg-gradient-to-r from-background to-background/0" />
           <h2 className="mb-2 font-bold font-header text-5xl">
             INVESTORS AT <br />
             TIRANA SLUSH'D 2025
@@ -296,14 +294,13 @@ export default () => {
           ))}
         </div>
       </section>
-      <section className="mx-auto flex max-w-7xl flex-col gap-24 px-8 py-32">
+      <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16">
         <div className="relative">
-          <div className="absolute left-0 z-20 h-full w-1/3 bg-gradient-to-r from-background to-background/0" />
           <h2 className="mb-2 font-bold font-header text-5xl">
             STRATEGIC PARTNERS OF <br />
             TIRANA SLUSH'D 2025
           </h2>
-          <h3 className="text-foreground-dimmed text-lg">
+          <h3 className="text-green-400 text-lg">
             Shaping impact through strategic partnership.
           </h3>
         </div>
@@ -324,14 +321,13 @@ export default () => {
           ))}
         </div>
       </section>
-      <section className="mx-auto flex max-w-7xl flex-col gap-24 px-8 py-32">
+      <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16">
         <div className="relative">
-          <div className="absolute left-0 z-20 h-full w-1/3 bg-gradient-to-r from-background to-background/0" />
           <h2 className="mb-2 font-bold font-header text-5xl">
             COMMUNITY PARTNERS OF <br />
             TIRANA SLUSH'D 2025
           </h2>
-          <h3 className="text-foreground-dimmed text-lg">
+          <h3 className="text-[#75fe72] text-lg pl-1">
             Bridging ecosystems through community power.
           </h3>
         </div>
@@ -353,14 +349,13 @@ export default () => {
           ))}
         </div>
       </section>
-      <section className="mx-auto flex max-w-7xl flex-col gap-24 px-8 py-32">
+      <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16">
         <div className="relative">
-          <div className="absolute left-0 z-20 h-full w-1/3 bg-gradient-to-r from-background to-background/0" />
           <h2 className="mb-2 font-bold font-header text-5xl">
             GROWTH PARTNERS OF <br />
             TIRANA SLUSH'D 2025
           </h2>
-          <h3 className="text-foreground-dimmed text-lg">
+          <h3 className="text-[#75fe72] text-lg pl-1">
             Empowering ideas through meaningful support.
           </h3>
         </div>
@@ -382,14 +377,13 @@ export default () => {
           ))}
         </div>
       </section>
-      <section className="mx-auto flex max-w-7xl flex-col gap-24 px-8 py-32">
+      <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16">
         <div className="relative">
-          <div className="absolute left-0 z-20 h-full w-1/3 bg-gradient-to-r from-background to-background/0" />
           <h2 className="mb-2 font-bold font-header text-5xl">
             OUR ESTIMEED <br />
             SPONSORS
           </h2>
-          <h3 className="text-foreground-dimmed text-lg">
+          <h3 className="text-green-400 text-lg">
             Dring innovation through shared ambition.
           </h3>
         </div>
@@ -411,14 +405,13 @@ export default () => {
           ))}
         </div>
       </section>
-      <section className="mx-auto flex max-w-7xl flex-col gap-24 px-8 py-32">
+      <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16">
         <div className="relative">
-          <div className="absolute left-0 z-20 h-full w-1/3 bg-gradient-to-r from-background to-background/0" />
           <h2 className="mb-2 font-bold font-header text-5xl">
             OUR PRESS <br />
             PARTNERS
           </h2>
-          <h3 className="text-foreground-dimmed text-lg">
+          <h3 className="text-[#75fe72] text-lg pl-1">
             Dring innovation through shared ambition.
           </h3>
         </div>
@@ -440,7 +433,7 @@ export default () => {
           ))}
         </div>
       </section>
-      {/* <section className="mx-auto flex max-w-7xl flex-col gap-24 px-8 py-32">
+      {/* <section className="mx-auto flex max-w-7xl flex-col gap-24 px-8 py-16">
         <div className="relative">
           <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0" />
           <h2 className="mb-2 font-bold font-header text-5xl">
@@ -467,7 +460,7 @@ export default () => {
         </div>
       </section> */}
 
-      <section className="bg-background py-32">
+      <section className="bg-background py-16">
         <div className="mx-auto max-w-7xl px-8">
           <h2 className="relative mb-20 bg-gradient-to-r from-white to-gray-400 bg-clip-text font-bold font-header text-5xl text-transparent">
             <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0" />
