@@ -55,9 +55,17 @@ export default () => {
 
         <section className="absolute right-0 bottom-0 left-0 overflow-hidden bg-background/80 bg-gradient-to-r py-4 backdrop-blur-sm">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent" />
-          <div className="animate-scroll whitespace-nowrap font-bold font-header text-foreground text-lg sm:text-2xl lg:text-3xl">
-            NOTHING NORMAL EVER CHANGED A DAMN THING. • NOTHING NORMAL EVER
-            CHANGED A DAMN THING. • NOTHING NORMAL EVER CHANGED A DAMN THING. •
+          <div className="flex animate-scroll whitespace-nowrap font-bold font-header text-foreground text-lg sm:text-2xl lg:text-3xl">
+            <span className="inline-block pr-8">
+              NOTHING NORMAL EVER CHANGED A DAMN THING. • NOTHING NORMAL EVER
+              CHANGED A DAMN THING. • NOTHING NORMAL EVER CHANGED A DAMN THING.
+              •
+            </span>
+            <span className="inline-block pr-8">
+              NOTHING NORMAL EVER CHANGED A DAMN THING. • NOTHING NORMAL EVER
+              CHANGED A DAMN THING. • NOTHING NORMAL EVER CHANGED A DAMN THING.
+              •
+            </span>
           </div>
         </section>
       </section>
@@ -322,7 +330,10 @@ export default () => {
           ))}
         </div>
       </section>
-      <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16">
+      <section
+        className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16"
+        id="partners"
+      >
         <div className="relative">
           <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
           <h2 className="mb-2 font-bold font-header text-5xl">
@@ -443,7 +454,10 @@ export default () => {
           ))}
         </div>
       </section>
-      <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16">
+      <section
+        className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16"
+        id="media"
+      >
         <div className="relative">
           <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
           <h2 className="mb-2 font-bold font-header text-5xl">

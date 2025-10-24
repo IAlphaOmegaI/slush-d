@@ -6,17 +6,15 @@ import {
   SheetTrigger,
 } from "@zenncore/web/components/sheet";
 import Image from "next/image";
-import Link from "next/link";
 
 export const NavigationMenu = () => {
   const routes = [
     { href: "#about", label: "ABOUT" },
     { href: "#tickets", label: "TICKETS" },
-    { href: "#program", label: "PROGRAM" },
     { href: "#speakers", label: "SPEAKERS" },
     { href: "#partners", label: "PARTNERS" },
     { href: "#media", label: "MEDIA" },
-    { href: "#press", label: "PRESS" },
+    { href: "#agenda", label: "AGENDA" },
   ];
 
   return (
@@ -61,13 +59,14 @@ export const NavigationMenu = () => {
               </div>
               <nav className="mt-8 flex flex-col gap-2 font-header">
                 {routes.map((item) => (
-                  <Link
+                  <a
+                    key={item.href}
                     href={item.href}
                     className="py-2 font-semibold text-2xl text-foreground tracking-wide transition-colors hover:text-white"
                   >
                     <span className="text-4xl text-foreground-dimmed">/</span>
                     {item.label}
-                  </Link>
+                  </a>
                 ))}
               </nav>
             </div>

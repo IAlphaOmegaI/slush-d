@@ -2,6 +2,10 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme {
   /* background shades */
   --color-foreground-dimmed: hsl(0 0% 85%);
@@ -85,4 +89,19 @@
   --color-emphasis: #373737;
   --color-emphasis-rich: #e5e4f6;
   --color-emphasis-foreground: #000;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@layer utilities {
+  .animate-scroll {
+    animation: scroll 20s linear infinite;
+  }
 }
