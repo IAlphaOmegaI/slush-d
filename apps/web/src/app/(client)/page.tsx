@@ -76,16 +76,17 @@ export default () => {
               <p className="mb-3 font-header font-regular">75% tickets sold</p>
               <div className="flex gap-1">
                 {/* Progress bar segments */}
-                {Array.from({ length: 20 }, (_, i) => (
+                {Array.from({ length: 20 }, (_, index) => (
                   <div
-                    key={i}
+                    // biome-ignore lint/suspicious/noArrayIndexKey: no better key
+                    key={index}
                     className={`h-8 w-3 rounded-sm border border-accent-foreground ${
-                      i < 15
-                        ? i < 5
+                      index < 15
+                        ? index < 5
                           ? "bg-gradient-to-t from-green-500 to-green-400"
-                          : i < 10
+                          : index < 10
                           ? "bg-gradient-to-t from-yellow-500 to-yellow-400"
-                          : i < 13
+                          : index < 13
                           ? "bg-gradient-to-t from-orange-500 to-orange-400"
                           : "bg-gradient-to-t from-red-500 to-red-400"
                         : "bg-accent"
@@ -248,8 +249,12 @@ export default () => {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3" id="speakers">
           {speakers
             .sort((a, b) => a.index - b.index)
-            .map((speaker) => (
-              <div key={speaker.name} className="flex flex-col gap-4 p-4 group">
+            .map((speaker, index) => (
+              <div
+                // biome-ignore lint/suspicious/noArrayIndexKey: no better key
+                key={index}
+                className="flex flex-col gap-4 p-4 group"
+              >
                 <div className="relative w-full">
                   <div className="-skew-x-3 aspect-square w-full transform bg-gradient-to-br from-yellow-400 via-orange-500 to-red-600 shadow-2xl" />
                   <Image
@@ -285,10 +290,25 @@ export default () => {
             TIRANA SLUSH'D 2025
           </h2>
         </div>
+        <Link
+          href={investors[0].href}
+          className="flex flex-col items-center justify-center gap-4 p-4 w-full h-64"
+        >
+          <Image
+            src={investors[0].image}
+            alt="investor"
+            width={300}
+            height={300}
+          />
+          <h3 className="text-foreground-dimmed text-lg font-header text-secondary font-semibold uppercase">
+            Our Lead Investor of the 300K Investment Fund
+          </h3>
+        </Link>
         <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
-          {investors.map((investor) => (
+          {investors.slice(1).map((investor, index) => (
             <Link
-              key={investor.href}
+              // biome-ignore lint/suspicious/noArrayIndexKey: no better key
+              key={index}
               href={investor.href}
               className="flex flex-col items-center justify-center gap-4 p-4 w-full h-44"
             >
@@ -314,9 +334,10 @@ export default () => {
           </h3>
         </div>
         <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
-          {partners.map((partner) => (
+          {partners.map((partner, index) => (
             <Link
-              key={partner.href}
+              // biome-ignore lint/suspicious/noArrayIndexKey: no better key
+              key={index}
               href={partner.href}
               className="flex flex-col items-center justify-center gap-4 p-4 w-full h-44"
             >
@@ -343,9 +364,10 @@ export default () => {
         </div>
         <div className="grid grid-cols-2 gap-8 lg:grid-cols-5 relative">
           <Radient className="translate-x-1/2 right-0 top-0 from-secondary/30 to-secondary/0" />
-          {community.map((partner) => (
+          {community.map((partner, index) => (
             <Link
-              key={partner.href}
+              // biome-ignore lint/suspicious/noArrayIndexKey: no better key
+              key={index}
               href={partner.href}
               className="flex flex-col items-center justify-center gap-4 p-4 w-full h-44"
             >
@@ -372,9 +394,10 @@ export default () => {
           </h3>
         </div>
         <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
-          {growth.map((partner) => (
+          {growth.map((partner, index) => (
             <Link
-              key={partner.href}
+              // biome-ignore lint/suspicious/noArrayIndexKey: no better key
+              key={index}
               href={partner.href}
               className="flex flex-col items-center justify-center gap-4 p-4 w-full h-44"
             >
@@ -402,9 +425,10 @@ export default () => {
           </h3>
         </div>
         <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
-          {sponsors.map((partner) => (
+          {sponsors.map((partner, index) => (
             <Link
-              key={partner.href}
+              // biome-ignore lint/suspicious/noArrayIndexKey: no better key
+              key={index}
               href={partner.href}
               className="flex flex-col items-center justify-center gap-4 p-4 w-full h-44"
             >
@@ -431,9 +455,10 @@ export default () => {
           </h3>
         </div>
         <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
-          {media.map((partner) => (
+          {media.map((partner, index) => (
             <Link
-              key={partner.href}
+              // biome-ignore lint/suspicious/noArrayIndexKey: no better key
+              key={index}
               href={partner.href}
               className="flex flex-col items-center justify-center gap-4 p-4 w-full h-44 max-h-44"
             >
@@ -539,10 +564,264 @@ export default () => {
           </div>
         </div>
       </section>
+
+      <section id="agenda" className="bg-background py-16 relative">
+        <Radient className="translate-x-1/2 right-1/2 top-0 from-[#00ffee]/20 to-[#00ffee]/0" />
+        <div className="mx-auto max-w-7xl px-8">
+          <div className="relative mb-16">
+            <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
+            <h2 className="mb-4 font-bold font-header text-5xl">
+              EVENT AGENDA <br />
+              TIRANA SLUSH'D 2025
+            </h2>
+            <p className="text-foreground-dimmed text-lg">
+              Your complete guide to two days of innovation, networking, and
+              inspiration
+            </p>
+          </div>
+
+          <div className="mb-12">
+            <div className="relative mb-4">
+              <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
+              <h2 className="mb-4 font-bold font-header text-3xl">
+                WEDNESDAY, OCTOBER 29 - INVESTOR DAY
+              </h2>
+            </div>
+            <div className="rounded-xl border border-accent-foreground bg-background-dimmed p-6">
+              <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-8">
+                <div className="font-header text-2xl font-bold text-foreground md:min-w-[120px]">
+                  19:00 - 22:00
+                </div>
+                <div className="flex-1">
+                  <h4 className="mb-2 font-header font-bold text-xl text-foreground">
+                    Dinner with Investors
+                  </h4>
+                  <p className="text-foreground-dimmed">
+                    Sky Tower, Tirana • By invitation only
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div className="relative mb-4">
+              <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
+              <h2 className="font-bold font-header text-3xl">
+                THURSDAY, OCTOBER 30, 2025 - MAIN EVENT
+              </h2>
+              <p className="text-foreground text-2xl mb-4">09:30 - 19:00</p>
+            </div>
+
+            <div className="space-y-4 relative">
+              <Radient className="-translate-x-1/2 left-0 -bottom-full translate-y-full from-secondary/30 to-secondary/0" />
+              {agenda.map((item, index) => (
+                <div
+                  // biome-ignore lint/suspicious/noArrayIndexKey: no better key
+                  key={index}
+                  className="rounded-xl border border-accent-foreground bg-background-dimmed p-6 transition-all hover:border-accent-foreground/60 hover:bg-background-rich"
+                >
+                  <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-8">
+                    <div className="font-header text-2xl font-bold text-foreground md:min-w-[120px]">
+                      {item.time}
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="mb-2 font-header font-bold text-xl text-foreground">
+                        {item.title}
+                      </h4>
+                      {item.moderator && (
+                        <p className="mb-2 text-foreground-dimmed">
+                          <span className="font-semibold">Moderator:</span>{" "}
+                          {item.moderator}
+                        </p>
+                      )}
+                      {item.speakers && (
+                        <p className="mb-2 text-foreground-dimmed">
+                          <span className="font-semibold">Speakers:</span>{" "}
+                          {item.speakers}
+                        </p>
+                      )}
+                      {item.panelists && (
+                        <p className="mb-2 text-foreground-dimmed">
+                          <span className="font-semibold">Panelists:</span>{" "}
+                          {item.panelists}
+                        </p>
+                      )}
+                      {item.description && (
+                        <p className="mt-2 text-foreground-dimmed text-sm leading-relaxed">
+                          {item.description}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* After Party */}
+          <div className="relative my-4">
+            <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
+            <h2 className="font-bold font-header text-3xl">
+              AFTER PARTY & NETWORKING
+            </h2>
+            <p className="text-foreground text-2xl mb-4">18:30 onwards</p>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
 };
+
+const agenda = [
+  {
+    time: "09:00 – 09:30",
+    title: "Registration & Networking",
+    description:
+      "Ambient music, welcome coffee and networking among participants.",
+  },
+  {
+    time: "09:30 – 09:35",
+    title: "Official Opening with Video",
+    speakers: "Boralda Minaj, Enxhi Minaj, Tai Tran",
+    description:
+      "Official Slush video recap: history, energy Tirana Slush'D & Slush Main Event",
+  },
+  {
+    time: "09:35 – 09:38",
+    title: "Narrative Stories – Last Year's Winners",
+    speakers: "Jona Dodaj (Bliss.al), Arber Kadia (Patoko)",
+    description:
+      "Stories of passion, innovation, and resilience from last year's winners.",
+  },
+  {
+    time: "09:50 – 10:10",
+    title: "Opening Remarks",
+    speakers: "Edi Rama, Delina Ibrahimaj, Arbjan Mazniku, Ekaterina Solovova",
+    description:
+      "Welcoming remarks from key partners and supporters of Tirana Slush'D.",
+  },
+  {
+    time: "10:30 – 10:55",
+    title: "Panel 1: Albania, the Next Rising Star",
+    moderator: "Brenton Bënja",
+    panelists:
+      "Arjan Ymeri (Startup Albania), Laura Saro (AIDA), Sebastian (GIZ/EU4Innovation), Peter Vesterbacka",
+    description:
+      "The Albanian startup ecosystem is transitioning into a new phase, from ideation to building structures and securing real investments.",
+  },
+  {
+    time: "11:30 – 11:50",
+    title: "Fireside Chat – Born Global",
+    moderator: "Enxhi Minaj",
+    speakers: "Oskari Eskola (CEO, BeeHealthy)",
+    description:
+      "An inspiring example of how healthcare innovation can emerge from a small market and go global.",
+  },
+  {
+    time: "11:50 – 12:10",
+    title: "HealthTech: Building the Next Generation of HealthTech Founders",
+    moderator: "Margarita Khartanovich",
+    panelists:
+      "Julia Hoxha (Zana), Michele Biring-Pani (Barleti Medical Group), Fation Losha (DigitSapiens)",
+    description:
+      "Exploring the future of healthcare technology and innovation.",
+  },
+  {
+    time: "12:10 – 12:35",
+    title: "DeepTech 101: How Science-Based Startups Shape the Future",
+    moderator: "Eelis Lehtinen",
+    panelists:
+      "Franceska Korance (EIT Hub), Joni Rakipi (ETH Zurich), Mateo de Bardeci (DeepPSY)",
+    description:
+      "What is DeepTech and why is it important? What are the key steps in founding a DeepTech startup?",
+  },
+  {
+    time: "12:35 – 13:00",
+    title: "From Zero to One: The Story of Albania's First Venture Investment",
+    moderator: "Daniel Uusitalo (4Impact VC)",
+    speakers:
+      "Julien Coustaury (Fil Rouge Capital), Gentjan Zotaj (AILend), Briseida Gjoza (ConsciESG)",
+    description: "The journey of Albania's pioneering venture investments.",
+  },
+  {
+    time: "13:00 – 13:15",
+    title: "Lunch Break",
+    description: "Refreshments and networking opportunity.",
+  },
+  {
+    time: "13:15 – 13:35",
+    title: "Startup Mindset: How to Win as a Founder",
+    speakers: "Walid O El Ceikh (BSV Ventures)",
+    description:
+      "Essential insights on developing the right mindset for startup success.",
+  },
+  {
+    time: "13:35 – 14:00",
+    title: "She Built It – Women Leading the Tech Revolution",
+    moderator: "Marjana Prifti Skenduli (AI Albania)",
+    panelists:
+      "Arjeta Puca (TIMAK), Linda Shomo (EasyPay), Sanja Mitrovska (Founders Game)",
+    description:
+      "Five women who have made it possible – inspiration, leadership and innovation in action.",
+  },
+  {
+    time: "14:00 – 14:20",
+    title: "Inside the VC Mind: What We Really Look for in Founders",
+    moderator: "Tai Tran",
+    panelists:
+      "Linn-Cecilie Linnemann (LUMO Labs VC), Eli Zhabevska (South Central Ventures), Shefqet Avdullahu, Adam Durica (Zero One Hundred)",
+    description:
+      "Direct insights from venture capitalists on what makes founders investable.",
+  },
+  {
+    time: "14:20 – 14:45",
+    title: "FinTech Albania 2025 Panel",
+    moderator: "Marko Ruokolainen (Signicat)",
+    panelists:
+      "Deivis Shomo (EasyPay), Elton Collaku (Union/Western Union), Idlir Ahmeti (Paysera), Rumen Iliev (LaunchHub Ventures)",
+    description:
+      "The future of financial technology in Albania and the region.",
+  },
+  {
+    time: "14:45 – 14:50",
+    title: "Break",
+  },
+  {
+    time: "14:50 – 15:35",
+    title: "Final Pitch Competition (First 5 Startups)",
+    description: "Founders present their dreams to the world of investments.",
+  },
+  {
+    time: "15:35 – 15:40",
+    title: "Break",
+  },
+  {
+    time: "15:40 – 16:25",
+    title: "Final Pitch Competition (Last 5 Startups)",
+    description: "The second half of the pitch competition continues.",
+  },
+  {
+    time: "16:25 – 16:45",
+    title: "Funded or Ghosted: The Startup Funding Game of the Next Decade",
+    moderator: "Margarita Khartanovich",
+    description: "Exploring the evolving landscape of startup funding.",
+  },
+  {
+    time: "16:30 – 16:50",
+    title: "Artistic Performance",
+    description: "10-minute break with live artistic performance.",
+  },
+  {
+    time: "16:50 – 18:00",
+    title: "Awards Ceremony & Closing",
+    speakers: "Antti Rahikka",
+    description:
+      "Announcement of winners: Investor Prize (€300,000), 7 tickets to Slush Finland, and unconditional Prize (€30,000). Thanks from organizers and jury.",
+  },
+];
 
 const tickets = [
   {
@@ -883,7 +1162,7 @@ const investors = [
     href: "https://0100.vc/",
     image: "/images/investors/investor-7.png",
   },
-];
+] as const;
 
 const partners = [
   {

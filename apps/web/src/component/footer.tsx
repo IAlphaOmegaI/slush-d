@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { Button } from "@zenncore/web/components/button";
+
 export const Footer = () => {
   return (
     <footer className="bg-background-dimmed py-20">
@@ -53,37 +55,22 @@ export const Footer = () => {
               />
               <p className="text-foreground text-lg">Who are you?</p>
               <div className="grid grid-cols-2 gap-2">
-                <button
-                  type="button"
-                  className="rounded border border-accent-foreground bg-background-rich px-4 py-2 font-bold font-header text-foreground transition-colors hover:bg-gray-800"
-                >
+                <Button color="neutral" className="w-full">
                   Startup
-                </button>
-                <button
-                  type="button"
-                  className="rounded border border-accent-foreground bg-background-rich px-4 py-2 font-bold font-header text-foreground transition-colors hover:bg-gray-800"
-                >
+                </Button>
+                <Button color="neutral" className="w-full">
                   Investor
-                </button>
-                <button
-                  type="button"
-                  className="rounded border border-accent-foreground bg-background-rich px-4 py-2 font-bold font-header text-foreground transition-colors hover:bg-gray-800"
-                >
+                </Button>
+                <Button color="neutral" className="w-full">
                   Media
-                </button>
-                <button
-                  type="button"
-                  className="rounded border border-accent-foreground bg-background-rich px-4 py-2 font-bold font-header text-foreground transition-colors hover:bg-gray-800"
-                >
+                </Button>
+                <Button color="neutral" className="w-full">
                   Other
-                </button>
+                </Button>
               </div>
-              <button
-                type="button"
-                className="rich-gray-900 w-full rounded border border-accent-foreground px-4 py-3 font-bold font-header font-semibold text-foreground transition-colors hover:bg-gray-800"
-              >
+              <Button type="button" color="primary" className="w-full">
                 Sign up
-              </button>
+              </Button>
             </div>
           </div>
         </div>
