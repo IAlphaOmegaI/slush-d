@@ -24,12 +24,12 @@
 
   /* primary shades - blue */
   --color-primary-dimmed: oklch(28.3% 0.141 291.089);
-  --color-primary: #110252;
+  --color-primary: #fa02b0;
   --color-primary-rich: #d306dd;
 
   /* secondary shades - teal green */
   --color-secondary-dimmed: oklch(27.1% 0.105 12.094);
-  --color-secondary: oklch(45.5% 0.188 13.697);
+  --color-secondary: #75fe72;
   --color-secondary-rich: oklch(71.2% 0.194 13.428);
 
   /* destructive shades */

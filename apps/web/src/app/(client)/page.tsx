@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Footer } from "@/component/footer";
 import { NavigationMenu } from "@/component/navigation-menu";
+import { Radient } from "@/component/radient";
+import { Spotlight } from "@/component/spotlight";
 
 export default () => {
   return (
@@ -60,12 +62,11 @@ export default () => {
         </section>
       </section>
 
-      {/* Tickets Section - Exact Design Match */}
       <section id="tickets" className="bg-background py-16">
         <div className="mx-auto max-w-7xl px-8">
           <div className="mb-16 flex flex-col items-center justify-between gap-4 md:flex-row">
             <div className="relative">
-              <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0" />
+              <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
               <h2 className="mb-2 font-bold font-header text-5xl">
                 TICKETS TO <br />
                 TIRANA SLUSH'D 2025
@@ -95,7 +96,7 @@ export default () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
             {tickets.map(({ name, price, benefits }, index) => (
               <div className="flex h-180 flex-col gap-6 rounded-xl border border-accent-foreground bg-background-dimmed p-4 font-header">
                 <div className="text-center">
@@ -147,7 +148,6 @@ export default () => {
         </div>
       </section>
 
-      {/* Second Photo Section - Network Visualization Background */}
       <section className="relative overflow-hidden py-16">
         {/* Network visualization background */}
         <div className="absolute inset-0 opacity-40">
@@ -187,7 +187,7 @@ export default () => {
             </h2>
           </div>
 
-          <div className="mx-auto mb-16 grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="mx-auto mb-16 grid max-w-4xl grid-cols-2 gap-8 md:grid-cols-2">
             <div className="relative rounded-lg border border-accent-foreground bg-background-rich p-8 font-header">
               <h3 className="mb-4 font-bold font-header text-3xl text-foreground">
                 $400,000 IN FUNDS
@@ -232,14 +232,20 @@ export default () => {
         </div>
       </section>
 
-      <section className="mx-auto flex max-w-7xl flex-col gap-24 px-8">
+      <section
+        className="mx-auto flex max-w-7xl flex-col gap-24 px-8 relative"
+        id="speakers"
+      >
+        <Radient className="translate-x-1/2 right-1/2 bottom-1/2 -translate-y-1/2 from-[#ddff00]/30 to-[#ddff00]/0" />
+        <Radient className="-translate-x-1/2 left-1/2 top-1/2 translate-y-1/2 from-[#00ffee]/30 to-[#00ffee]/0" />
         <div className="relative">
+          <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
           <h2 className="mb-2 font-bold font-header text-5xl">
             THE SPEAKERS <br />
             AT TIRANA SLUSH'D 2025
           </h2>
         </div>
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3" id="speakers">
+        <div className="grid grid-cols-2 gap-8 lg:grid-cols-3" id="speakers">
           {speakers
             .sort((a, b) => a.index - b.index)
             .map((speaker) => (
@@ -252,7 +258,7 @@ export default () => {
                     fill
                     className="absolute inset-0 w-full object-contain grayscale"
                   />
-                  <div className="text-sm size-full p-2 absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 size-full bg-black/80">
+                  <div className="size-full p-4 absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 size-full bg-black/80">
                     {speaker.description}
                   </div>
                 </div>
@@ -270,14 +276,16 @@ export default () => {
         </div>
       </section>
 
-      <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16">
+      <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16 relative">
+        <Spotlight className="h-40 min-h-40" />
         <div className="relative">
+          <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
           <h2 className="mb-2 font-bold font-header text-5xl">
             INVESTORS AT <br />
             TIRANA SLUSH'D 2025
           </h2>
         </div>
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
           {investors.map((investor) => (
             <Link
               key={investor.href}
@@ -296,6 +304,7 @@ export default () => {
       </section>
       <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16">
         <div className="relative">
+          <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
           <h2 className="mb-2 font-bold font-header text-5xl">
             STRATEGIC PARTNERS OF <br />
             TIRANA SLUSH'D 2025
@@ -304,7 +313,7 @@ export default () => {
             Shaping impact through strategic partnership.
           </h3>
         </div>
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
           {partners.map((partner) => (
             <Link
               key={partner.href}
@@ -323,15 +332,17 @@ export default () => {
       </section>
       <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16">
         <div className="relative">
+          <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
           <h2 className="mb-2 font-bold font-header text-5xl">
             COMMUNITY PARTNERS OF <br />
             TIRANA SLUSH'D 2025
           </h2>
-          <h3 className="text-[#75fe72] text-lg pl-1">
+          <h3 className="text-secondary text-lg pl-1">
             Bridging ecosystems through community power.
           </h3>
         </div>
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 lg:grid-cols-5 relative">
+          <Radient className="translate-x-1/2 right-0 top-0 from-secondary/30 to-secondary/0" />
           {community.map((partner) => (
             <Link
               key={partner.href}
@@ -349,17 +360,18 @@ export default () => {
           ))}
         </div>
       </section>
-      <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16">
+      <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16 relative">
         <div className="relative">
+          <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
           <h2 className="mb-2 font-bold font-header text-5xl">
             GROWTH PARTNERS OF <br />
             TIRANA SLUSH'D 2025
           </h2>
-          <h3 className="text-[#75fe72] text-lg pl-1">
+          <h3 className="text-secondary text-lg pl-1">
             Empowering ideas through meaningful support.
           </h3>
         </div>
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
           {growth.map((partner) => (
             <Link
               key={partner.href}
@@ -377,8 +389,10 @@ export default () => {
           ))}
         </div>
       </section>
-      <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16">
+      <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16 relative">
+        <Radient className="translate-x-1/2 right-1/2 bottom-0 translate-y-1/2 from-primary/30 to-primary/0" />
         <div className="relative">
+          <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
           <h2 className="mb-2 font-bold font-header text-5xl">
             OUR ESTIMEED <br />
             SPONSORS
@@ -387,7 +401,7 @@ export default () => {
             Dring innovation through shared ambition.
           </h3>
         </div>
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
           {sponsors.map((partner) => (
             <Link
               key={partner.href}
@@ -407,15 +421,16 @@ export default () => {
       </section>
       <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16">
         <div className="relative">
+          <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
           <h2 className="mb-2 font-bold font-header text-5xl">
             OUR PRESS <br />
             PARTNERS
           </h2>
-          <h3 className="text-[#75fe72] text-lg pl-1">
+          <h3 className="text-secondary text-lg pl-1">
             Dring innovation through shared ambition.
           </h3>
         </div>
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
           {media.map((partner) => (
             <Link
               key={partner.href}
@@ -433,42 +448,15 @@ export default () => {
           ))}
         </div>
       </section>
-      {/* <section className="mx-auto flex max-w-7xl flex-col gap-24 px-8 py-16">
-        <div className="relative">
-          <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0" />
-          <h2 className="mb-2 font-bold font-header text-5xl">
-            COMMUNITY PARTNERS AT <br />
-            TIRANA SLUSH'D 2025
-          </h2>
-        </div>
-        <div className="grid grid-cols-3 gap-8">
-          {investors.map((investor) => (
-            <Link
-              key={investor.href}
-              href={investor.href}
-              className="flex flex-col gap-4 p-4"
-            >
-              <Image
-                src={investor.image}
-                alt="investor"
-                width={300}
-                height={300}
-                className="brightness-0 invert"
-              />
-            </Link>
-          ))}
-        </div>
-      </section> */}
 
       <section className="bg-background py-16">
         <div className="mx-auto max-w-7xl px-8">
           <h2 className="relative mb-20 bg-gradient-to-r from-white to-gray-400 bg-clip-text font-bold font-header text-5xl text-transparent">
-            <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0" />
+            <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
             LATEST EVENT NEWS & BLOGS
           </h2>
 
           <div className="space-y-12">
-            {/* Blog 1: Image left, text right */}
             <div className="flex flex-col items-center gap-8 lg:flex-row">
               <div className="lg:w-1/2">
                 <div className="relative">

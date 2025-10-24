@@ -14,17 +14,17 @@ export type PropertyAccessor<T extends EmptyObject> =
 
 export type PropertyValue<
   T extends EmptyObject,
-  K extends PropertyAccessor<T>
+  K extends PropertyAccessor<T>,
 > = K extends keyof T
   ? T[K]
   : K extends `${infer K}.${infer R}`
-  ? // @ts-ignore: this is fine
-    PropertyValue<T[K], R>
-  : never;
+    ? // @ts-ignore: this is fine
+      PropertyValue<T[K], R>
+    : never;
 
 export const access = <T extends EmptyObject, A extends PropertyAccessor<T>>(
   accessee: T,
-  accessor: A
+  accessor: A,
 ): PropertyValue<T, A> => {
   const [key, ...rest] = accessor.toString().split(".");
   if (rest.length === 0) return accessee[key as keyof T] as PropertyValue<T, A>;
@@ -42,13 +42,13 @@ export type IsPlainObject<T> = T extends Record<string, any>
   ? T extends readonly any[]
     ? false
     : T extends Primitive
-    ? false
-    : true
+      ? false
+      : true
   : false;
 
 export type Merge<
   T extends Record<string, any>,
-  U extends Record<string, any>
+  U extends Record<string, any>,
 > = {
   [K in keyof T | keyof U]: K extends keyof U
     ? K extends keyof T
@@ -57,14 +57,14 @@ export type Merge<
           ? Merge<T[K], U[K]> // Recursive merge for objects
           : U[K] // Overwrite with non-object
         : IsOptional<U, K> extends true
-        ? IsOptional<T, K> extends true
-          ? NonNullable<T[K]> | NonNullable<U[K]> | undefined
-          : T[K] | NonNullable<U[K]>
-        : U[K] // Overwrite with non-object
+          ? IsOptional<T, K> extends true
+            ? NonNullable<T[K]> | NonNullable<U[K]> | undefined
+            : T[K] | NonNullable<U[K]>
+          : U[K] // Overwrite with non-object
       : U[K] // New property
     : K extends keyof T
-    ? T[K] // Keep existing property
-    : never;
+      ? T[K] // Keep existing property
+      : never;
 };
 
 // Type for merging multiple objects

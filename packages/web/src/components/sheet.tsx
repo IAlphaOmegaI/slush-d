@@ -42,7 +42,7 @@ export const SheetPopup = ({
         className={(state) => {
           return cn(
             "fixed inset-0 bg-black/50 transition-all duration-200 data-ending-style:opacity-0 data-starting-style:opacity-0",
-            resolveClassName(classList?.backdrop, state)
+            resolveClassName(classList?.backdrop, state),
           );
         }}
       />
@@ -59,7 +59,7 @@ export const SheetPopup = ({
             side === "bottom" &&
               "inset-x-0 bottom-0 mx-auto h-auto w-screen origin-bottom border-t border-accent-foreground data-ending-style:translate-y-full data-starting-style:translate-y-full",
             resolveClassName(className, state),
-            resolveClassName(classList?.root, state)
+            resolveClassName(classList?.root, state),
           );
         }}
         {...props}
@@ -69,7 +69,7 @@ export const SheetPopup = ({
           className={(state) => {
             return cn(
               "absolute top-4 right-4 rounded-xs text-muted-foreground opacity-50 ring-offset-popover transition-opacity hover:opacity-100 focus:outline-hidden focus:ring-[3px] focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
-              resolveClassName(classList?.close?.root, state)
+              resolveClassName(classList?.close?.root, state),
             );
           }}
         >
@@ -119,7 +119,7 @@ export const SheetTitle = ({
       className={(state) => {
         return cn(
           "font-semibold text-foreground",
-          resolveClassName(className, state)
+          resolveClassName(className, state),
         );
       }}
     />
@@ -140,7 +140,7 @@ export const SheetDescription = ({
       className={(state) => {
         return cn(
           "text-foreground-dimmed text-sm",
-          resolveClassName(className, state)
+          resolveClassName(className, state),
         );
       }}
     />
