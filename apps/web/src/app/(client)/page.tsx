@@ -784,7 +784,7 @@ const agenda = [
   {
     time: "09:50 – 10:10",
     title: "Opening Remarks",
-    speakers: "Edi Rama, Delina Ibrahimaj, Arbjan Mazniku, Ekaterina Solovova",
+    speakers: "Delina Ibrahimaj - Minister of Economy and Innovation, Arbjan Mazniku - Member of Parliament of Albania, Ekaterina Solovova - Leads EBRD operation in Albania",
     description:
       "Welcoming remarks from key partners and supporters of Tirana Slush'D.",
   },
@@ -793,24 +793,24 @@ const agenda = [
     title: "Panel 1: Albania, the Next Rising Star",
     moderator: "Brenton Bënja",
     panelists:
-      "Arjan Ymeri (Startup Albania), Laura Saro (AIDA), Sebastian (GIZ/EU4Innovation), Peter Vesterbacka",
+      "Arjan Ymeri - Director of Startup Albania, Laura Saro - Executive Director AIDA, Sebastian Berwanger - Team Leader EU4Innovation, Peter Vesterbacka - Founder of Slush",
     description:
       "The Albanian startup ecosystem is transitioning into a new phase, from ideation to building structures and securing real investments.",
   },
   {
     time: "11:30 – 11:50",
     title: "Fireside Chat – Born Global",
-    moderator: "Enxhi Minaj",
-    speakers: "Oskari Eskola (CEO, BeeHealthy)",
+    moderator: "Enxhi Minaj - Co-Founder of Tirana Slush'D",
+    speakers: "Oskari Eskola - CEO, BeeHealthy, Owned by Mehiläinen Group",
     description:
       "An inspiring example of how healthcare innovation can emerge from a small market and go global.",
   },
   {
     time: "11:50 – 12:10",
     title: "HealthTech: Building the Next Generation of HealthTech Founders",
-    moderator: "Margarita Khartanovich",
+    moderator: "Margarita Khartanovich - CCMO & Co-Founder at Sensible 4",
     panelists:
-      "Julia Hoxha (Zana), Michele Biring-Pani (Barleti Medical Group), Fation Losha (DigitSapiens)",
+      "Julia Hoxha - Co-Founder & CEO of Zana, Michele Biring-Pani - Business Development Director of Barleti Medical Group, Fation Losha - Technology and AI in HealthCare, CEO of DigitSapiens",
     description:
       "Exploring the future of healthcare technology and innovation.",
   },
@@ -819,16 +819,16 @@ const agenda = [
     title: "DeepTech 101: How Science-Based Startups Shape the Future",
     moderator: "Eelis Lehtinen",
     panelists:
-      "Franceska Korance (EIT Hub), Joni Rakipi (ETH Zurich), Mateo de Bardeci (DeepPSY)",
+      "Franceska Korance - Country officer at EIT Albania, Joni Rakipi - Investor Connect Program at ETH Zurich, Mateo de Bardeci - Founder and CEO of DeepPSY",
     description:
       "What is DeepTech and why is it important? What are the key steps in founding a DeepTech startup?",
   },
   {
     time: "12:35 – 13:00",
     title: "From Zero to One: The Story of Albania's First Venture Investment",
-    moderator: "Daniel Uusitalo (4Impact VC)",
+    moderator: "Daniel Uusitalo Investor at 4Impact VC",
     speakers:
-      "Julien Coustaury (Fil Rouge Capital), Gentjan Zotaj (AILend), Briseida Gjoza (ConsciESG)",
+      "Julien Coustaury Co-Founder of Fil Rouge Capital, Gentjan Zotaj - Founder AILend, Briseida Gjoza - Founder of ConsciESG",
     description: "The journey of Albania's pioneering venture investments.",
   },
   {
@@ -839,16 +839,16 @@ const agenda = [
   {
     time: "13:15 – 13:35",
     title: "Startup Mindset: How to Win as a Founder",
-    speakers: "Walid O El Ceikh (BSV Ventures)",
+    speakers: "Walid O El Ceikh - Partner at BSV Ventures",
     description:
       "Essential insights on developing the right mindset for startup success.",
   },
   {
     time: "13:35 – 14:00",
     title: "She Built It – Women Leading the Tech Revolution",
-    moderator: "Marjana Prifti Skenduli (AI Albania)",
+    moderator: "Marjana Prifti Skenduli - Founder of AI Albania",
     panelists:
-      "Arjeta Puca (TIMAK), Linda Shomo (EasyPay), Sanja Mitrovska (Founders Game)",
+      "Arjeta Puca - CEO of TIMAK, Linda Shomo - Founder of EasyPay, Sanja Mitrovska - Founder of Founders Game",
     description:
       "Five women who have made it possible – inspiration, leadership and innovation in action.",
   },
@@ -857,16 +857,16 @@ const agenda = [
     title: "Inside the VC Mind: What We Really Look for in Founders",
     moderator: "Tai Tran",
     panelists:
-      "Linn-Cecilie Linnemann (LUMO Labs VC), Eli Zhabevska (South Central Ventures), Shefqet Avdullahu, Adam Durica (Zero One Hundred)",
+      "Linn-Cecilie Linnemann - Senior Partner at LUMO Labs VC, Eli Zhabevska - Principal atSouth Central Ventures, Shefqet Avdullahu - Angel Investor, Adam Durica - Investor Mnager atZero One Hundred",
     description:
       "Direct insights from venture capitalists on what makes founders investable.",
   },
   {
     time: "14:20 – 14:45",
-    title: "FinTech Albania 2025 Panel",
-    moderator: "Marko Ruokolainen (Signicat)",
+    title: "Fintech: Breakout Year, Missing Pieces: Completing Albania’s Payments Puzzle",
+    moderator: "Rubin Haxhiymeri - Head of Growth and Product at DigitSapiens",
     panelists:
-      "Deivis Shomo (EasyPay), Elton Collaku (Union/Western Union), Idlir Ahmeti (Paysera), Rumen Iliev (LaunchHub Ventures)",
+      "Deivis Shomo - CCO at EasyPay, Elton Collaku - CEO of Union/Western Union, Idlir Ahmeti - Paysera, Rumen Iliev - Partner at LaunchHub Ventures",
     description:
       "The future of financial technology in Albania and the region.",
   },
@@ -876,7 +876,7 @@ const agenda = [
   },
   {
     time: "14:50 – 15:35",
-    title: "Final Pitch Competition (First 5 Startups)",
+    title: "Final Pitch Competition - First 5 Startups",
     description: "Founders present their dreams to the world of investments.",
   },
   {
@@ -885,13 +885,13 @@ const agenda = [
   },
   {
     time: "15:40 – 16:25",
-    title: "Final Pitch Competition (Last 5 Startups)",
+    title: "Final Pitch Competition - Last 5 Startups",
     description: "The second half of the pitch competition continues.",
   },
   {
     time: "16:25 – 16:45",
     title: "Funded or Ghosted: The Startup Funding Game of the Next Decade",
-    moderator: "Margarita Khartanovich",
+    moderator: "Margarita Khartanovich - CCMO & Co-Founder at Sensible 4",
     description: "Exploring the evolving landscape of startup funding.",
   },
   {
@@ -902,7 +902,7 @@ const agenda = [
   {
     time: "16:50 – 18:00",
     title: "Awards Ceremony & Closing",
-    speakers: "Antti Rahikka",
+    speakers: "Antti Rahikka - Director of Business Finland CEE",
     description:
       "Announcement of winners: Investor Prize (€300,000), 7 tickets to Slush Finland, and unconditional Prize (€30,000). Thanks from organizers and jury.",
   },
@@ -1019,7 +1019,7 @@ const speakers = [
   },
   {
     name: "ELI ZHABEVSKA",
-    title: "SOUTH CENTRAL VENTURES",
+    title: "PRINCIPAL at SOUTH CENTRAL VENTURES",
     image: "/images/speakers/speaker-27.png",
     description:
       "Eli is a finance professional turned venture investor, bringing over a decade of experience in banking regulation, risk management, and financial analysis to her role as Principal at South Central Ventures. Having shaped financial sector policy and supervised banks under EU and Basel frameworks, she now channels that expertise into sourcing, evaluating, and supporting high-potential startups across the Western Balkans. Passionate about fostering entrepreneurship in emerging markets, Eli partners with founders to strengthen their strategies, scale their businesses, and position regional innovations for global impact.",
@@ -1028,7 +1028,7 @@ const speakers = [
   {
     name: "JONI RAKIPI",
     title: "INVESTOR CONNECT PROGRAM: ETH Zürich",
-    image: "/images/speakers/speaker-7.png",
+    image: "/images/speakers/speaker-19.png",
     description:
       "Joni bridges deeptech innovation, venture capital, and academia, leading ETH Zürich’s Investor Connect program to connect groundbreaking spin-offs with investors while advising founders on their path from lab to market. His perspective is shaped by venture experience at Plug and Play, driving startup–corporate collaborations at Roche, and guiding one of Europe’s most vibrant student entrepreneurship communities as President of the ETH Entrepreneur Club. With a background in engineering and product innovation, he thrives at the intersection of technology and strategy, passionate about enabling breakthrough science to scale globally and empowering the next wave of deeptech entrepreneurs.",
     index: 16,
@@ -1052,7 +1052,7 @@ const speakers = [
   {
     name: "LINDA SHOMO",
     title: "FOUNDER & CEO: EASYPAY ALBANIA",
-    image: "/images/speakers/speaker-14.png",
+    image: "/images/speakers/speaker-29.png",
     description:
       "Linda Shomo is the Founder and CEO of EasyPay, Albania’s leading fintech company and a pioneer in digital payments and financial inclusion. For nearly two decades, she has driven innovation in electronic payment systems, empowering both banked and unbanked populations with accessible, secure, and real-time financial services. Linda also serves as Country Ambassador for the European Women Payments Network (EWPN) and chairs the Digital Business Committee at the American Chamber of Commerce in Albania.",
     index: 19,
