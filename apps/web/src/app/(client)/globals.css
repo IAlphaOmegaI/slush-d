@@ -5,3 +5,34 @@
   --font-header: "var(--font-knockout)";
   --font-body: "var(--font-geist)";
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes radialPulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@layer utilities {
+  .animate-scroll {
+    animation: scroll 20s linear infinite;
+  }
+
+  .animate-radial-pulse {
+    animation: radialPulse 2.5s ease-in-out infinite;
+  }
+}

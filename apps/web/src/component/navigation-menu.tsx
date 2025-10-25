@@ -9,7 +9,6 @@ import Image from "next/image";
 
 export const NavigationMenu = () => {
   const routes = [
-    { href: "#about", label: "ABOUT" },
     { href: "#tickets", label: "TICKETS" },
     { href: "#speakers", label: "SPEAKERS" },
     { href: "#partners", label: "PARTNERS" },

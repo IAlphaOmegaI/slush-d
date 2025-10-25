@@ -45,8 +45,7 @@ export default ({ children }: LayoutProps<"/">) => {
           className={`${geist.variable} ${knockout.variable} root isolate h-screen w-screen overflow-hidden overflow-y-auto overflow-x-hidden bg-background font-body text-foreground antialiased transition-colors duration-300`}
           style={
             {
-              "--font-accent": "var(--font-geist-mono)",
-              "--font-header": "var(--font-neue-power)",
+              "--font-header": "var(--font-knockout)",
               "--font-body": "var(--font-geist)",
             } as CSSProperties
           }

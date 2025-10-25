@@ -5,6 +5,7 @@ import { Footer } from "@/component/footer";
 import { NavigationMenu } from "@/component/navigation-menu";
 import { Radient } from "@/component/radient";
 import { Spotlight } from "@/component/spotlight";
+import { Button } from "@zenncore/web/components/button";
 
 export default () => {
   return (
@@ -75,7 +76,7 @@ export default () => {
           <div className="mb-16 flex flex-col items-center justify-between gap-4 md:flex-row">
             <div className="relative">
               <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
-              <h2 className="mb-2 font-bold font-header text-5xl">
+              <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl">
                 TICKETS TO <br />
                 TIRANA SLUSH'D 2025
               </h2>
@@ -106,12 +107,27 @@ export default () => {
           </div>
 
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
-            {tickets.map(({ name, price, benefits }, index) => (
-              <div className="flex h-180 flex-col gap-6 rounded-xl border border-accent-foreground bg-background-dimmed p-4 font-header">
-                <div className="text-center">
+            {tickets.map(({ name, price, benefits, cta, href }, index) => (
+              <div className="group relative flex h-140 flex-col gap-6 overflow-hidden rounded-xl border border-accent-foreground bg-background-dimmed p-4 font-header transition-all hover:border-opacity-80">
+                {/* Animated radial gradient overlay */}
+                <div
+                  className="pointer-events-none absolute inset-0 animate-radial-pulse rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  style={{
+                    background:
+                      index === 0
+                        ? "radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.4), rgba(239, 68, 68, 0.4), transparent 70%)"
+                        : index === 1
+                        ? "radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.4), rgba(168, 85, 247, 0.4), transparent 70%)"
+                        : index === 2
+                        ? "radial-gradient(circle at 50% 50%, rgba(34, 197, 94, 0.4), rgba(20, 184, 166, 0.4), transparent 70%)"
+                        : "radial-gradient(circle at 50% 50%, rgba(234, 179, 8, 0.4), rgba(249, 115, 22, 0.4), transparent 70%)",
+                  }}
+                />
+
+                <div className="relative z-10 text-center">
                   <div
                     className={cn(
-                      "mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br shadow-lg",
+                      "mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br shadow-lg transition-transform group-hover:scale-110",
                       index === 0 && "from-pink-500 to-red-500",
                       index === 1 && "from-blue-500 to-purple-500",
                       index === 2 && "from-green-500 to-teal-500",
@@ -120,13 +136,13 @@ export default () => {
                   >
                     <span className="font-bold text-foreground text-xl">S</span>
                   </div>
-                  <div className="font-bold font-foreground font-header text-3xl text-foreground">
+                  <div className="font-bold font-foreground font-body text-3xl text-foreground">
                     {price}€
                   </div>
                 </div>
                 <div
                   className={cn(
-                    "rounded-lg bg-gradient-to-r px-4 py-2 text-foreground",
+                    "relative z-10 rounded-lg bg-gradient-to-r px-4 py-2 text-foreground",
                     index === 0 && "from-pink-500 to-red-500",
                     index === 1 && "from-blue-500 to-purple-500",
                     index === 2 && "from-green-500 to-teal-500",
@@ -135,22 +151,32 @@ export default () => {
                 >
                   <h3 className="text-center font-bold font-header">{name}</h3>
                 </div>
-                <ul className="space-y-2 text-foreground text-sm">
+                <ul className="relative z-10 space-y-2 text-foreground text-sm">
                   {benefits.map((benefit) => (
                     <li key={benefit}>• {benefit}</li>
                   ))}
                 </ul>
-                <button
-                  type="button"
-                  className="mt-auto w-full rounded-lg border border-accent-foreground bg-background-rich py-3 font-header font-medium hover:cursor-pointer"
-                >
-                  Buy now
-                </button>
+                <Link href={href}>
+                  <Button
+                    className={cn(
+                      "w-full font-header mt-auto",
+                      index === 0 && "from-pink-500 to-red-500 border-pink-500",
+                      index === 1 &&
+                        "from-blue-500 to-purple-500 border-blue-500",
+                      index === 2 &&
+                        "from-green-500 to-teal-500 border-green-500",
+                      index === 3 &&
+                        "from-yellow-500 to-orange-500 border-yellow-500"
+                    )}
+                  >
+                    {cta ?? "Buy now"}
+                  </Button>
+                </Link>
               </div>
             ))}
           </div>
 
-          <p className="mt-8 text-center text-foreground-dimmed text-sm">
+          <p className="mt-8 text-center text-foreground-dimmed text-sm font-header">
             May be limited in availability, or require a separate application or
             registration process.
           </p>
@@ -190,7 +216,7 @@ export default () => {
         <div className="mx-auto flex max-w-7xl flex-col gap-24 px-8">
           <div className="relative">
             <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0" />
-            <h2 className="mb-2 font-bold font-header text-5xl">
+            <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl">
               THE CORE OF THE STARTUP <br />
               ECOSYSTEM UNDER ONE ROOF
             </h2>
@@ -249,7 +275,7 @@ export default () => {
         <Radient className="-translate-x-1/2 left-1/2 top-1/2 translate-y-1/2 from-[#00ffee]/30 to-[#00ffee]/0" />
         <div className="relative">
           <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
-          <h2 className="mb-2 font-bold font-header text-5xl">
+          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl">
             THE SPEAKERS <br />
             AT TIRANA SLUSH'D 2025
           </h2>
@@ -271,16 +297,16 @@ export default () => {
                     fill
                     className="absolute inset-0 w-full object-contain grayscale"
                   />
-                  <div className="size-full p-4 absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 size-full bg-black/80">
+                  <div className="size-full font-header p-4 absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 size-full bg-black/80">
                     {speaker.description}
                   </div>
                 </div>
 
                 <div className="flex flex-col">
-                  <h3 className="font-header font-semibold text-foreground-dimmed text-lg capitalize">
+                  <h3 className="font-header text-foreground-dimmed capitalize">
                     {speaker.title}
                   </h3>
-                  <h3 className="mb-4 font-bold font-header text-3xl text-foreground">
+                  <h3 className="mb-4 font-bold font-header text-2xl text-foreground">
                     {speaker.name}
                   </h3>
                 </div>
@@ -293,9 +319,16 @@ export default () => {
         <Spotlight className="h-40 min-h-40" />
         <div className="relative">
           <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
-          <h2 className="mb-2 font-bold font-header text-5xl">
+          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl">
             INVESTORS AT <br />
-            TIRANA SLUSH'D 2025
+            <Image
+              src="/images/logo.svg"
+              alt="logo"
+              className="inline-block"
+              width={320}
+              height={100}
+            />{" "}
+            2025
           </h2>
         </div>
         <Link
@@ -308,7 +341,7 @@ export default () => {
             width={300}
             height={300}
           />
-          <h3 className="text-foreground-dimmed text-lg font-header text-secondary font-semibold uppercase">
+          <h3 className="text-foreground-dimmed text-lg font-header text-secondary  uppercase">
             Our Lead Investor of the 300K Investment Fund
           </h3>
         </Link>
@@ -336,11 +369,18 @@ export default () => {
       >
         <div className="relative">
           <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
-          <h2 className="mb-2 font-bold font-header text-5xl">
+          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl">
             STRATEGIC PARTNERS OF <br />
-            TIRANA SLUSH'D 2025
+            <Image
+              src="/images/logo.svg"
+              alt="logo"
+              className="inline-block"
+              width={320}
+              height={100}
+            />{" "}
+            2025
           </h2>
-          <h3 className="text-green-400 text-lg">
+          <h3 className="text-green-400 md:text-lg font-header">
             Shaping impact through strategic partnership.
           </h3>
         </div>
@@ -365,11 +405,18 @@ export default () => {
       <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16">
         <div className="relative">
           <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
-          <h2 className="mb-2 font-bold font-header text-5xl">
+          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl">
             COMMUNITY PARTNERS OF <br />
-            TIRANA SLUSH'D 2025
+            <Image
+              src="/images/logo.svg"
+              alt="logo"
+              className="inline-block"
+              width={320}
+              height={100}
+            />{" "}
+            2025
           </h2>
-          <h3 className="text-secondary text-lg pl-1">
+          <h3 className="text-secondary text-lg  font-header pl-1">
             Bridging ecosystems through community power.
           </h3>
         </div>
@@ -396,11 +443,18 @@ export default () => {
       <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16 relative">
         <div className="relative">
           <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
-          <h2 className="mb-2 font-bold font-header text-5xl">
+          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl">
             GROWTH PARTNERS OF <br />
-            TIRANA SLUSH'D 2025
+            <Image
+              src="/images/logo.svg"
+              alt="logo"
+              className="inline-block"
+              width={320}
+              height={100}
+            />{" "}
+            2025
           </h2>
-          <h3 className="text-secondary text-lg pl-1">
+          <h3 className="text-secondary text-lg pl-1  font-header">
             Empowering ideas through meaningful support.
           </h3>
         </div>
@@ -427,11 +481,11 @@ export default () => {
         <Radient className="translate-x-1/2 right-1/2 bottom-0 translate-y-1/2 from-primary/30 to-primary/0" />
         <div className="relative">
           <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
-          <h2 className="mb-2 font-bold font-header text-5xl">
+          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl">
             OUR ESTIMEED <br />
             SPONSORS
           </h2>
-          <h3 className="text-green-400 text-lg">
+          <h3 className="text-green-400 md:text-lg  font-header">
             Dring innovation through shared ambition.
           </h3>
         </div>
@@ -460,12 +514,12 @@ export default () => {
       >
         <div className="relative">
           <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
-          <h2 className="mb-2 font-bold font-header text-5xl">
+          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl">
             OUR PRESS <br />
             PARTNERS
           </h2>
-          <h3 className="text-secondary text-lg pl-1">
-            Dring innovation through shared ambition.
+          <h3 className="text-secondary text-lg pl-1  font-header">
+            Bringing innovation through shared ambition.
           </h3>
         </div>
         <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
@@ -507,7 +561,7 @@ export default () => {
                 <h3 className="mb-4 font-bold font-header text-3xl text-foreground">
                   WHAT SETS SLUSH'D APART FROM OTHER TECH EVENTS?
                 </h3>
-                <p className="text-gray-400 text-lg">Expand+</p>
+                <p className="text-gray-400 text-lg font-header">Expand+</p>
               </div>
             </div>
 
@@ -523,7 +577,7 @@ export default () => {
                 <h3 className="mb-4 font-bold font-header text-3xl text-foreground">
                   WHAT COUNTRIES ARE REPRESENTED AT SLUSH'D?
                 </h3>
-                <p className="text-gray-400 text-lg">Expand+</p>
+                <p className="text-gray-400 text-lg font-header">Expand+</p>
               </div>
             </div>
 
@@ -539,7 +593,7 @@ export default () => {
                 <h3 className="mb-4 font-bold font-header text-3xl text-foreground">
                   WHAT INDUSTRIES ARE REPRESENTED AT SLUSH'D?
                 </h3>
-                <p className="text-gray-400 text-lg">Expand+</p>
+                <p className="text-gray-400 text-lg font-header">Expand+</p>
               </div>
             </div>
 
@@ -552,11 +606,11 @@ export default () => {
                 </div>
               </div>
               <div className="lg:w-1/2">
-                <h3 className="mb-4 font-bold text-3xl text-white">
+                <h3 className="mb-4 font-bold text-3xl text-white font-header">
                   I DON'T USUALLY ATTEND LARGE-SCALE EVENTS, HOW IS SLUSH'D
                   DIFFERENT?
                 </h3>
-                <p className="text-gray-400 text-lg">Expand+</p>
+                <p className="text-gray-400 text-lg font-header">Expand+</p>
               </div>
             </div>
 
@@ -586,7 +640,14 @@ export default () => {
             <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
             <h2 className="mb-4 font-bold font-header text-5xl">
               EVENT AGENDA <br />
-              TIRANA SLUSH'D 2025
+              <Image
+                src="/images/logo.svg"
+                alt="logo"
+                className="inline-block"
+                width={320}
+                height={100}
+              />{" "}
+              2025
             </h2>
             <p className="text-foreground-dimmed text-lg">
               Your complete guide to two days of innovation, networking, and
@@ -603,7 +664,7 @@ export default () => {
             </div>
             <div className="rounded-xl border border-accent-foreground bg-background-dimmed p-6">
               <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-8">
-                <div className="font-header text-2xl font-bold text-foreground md:min-w-[120px]">
+                <div className="font-header text-2xl font-bold text-foreground md:min-w-[120px] tabular-nums">
                   19:00 - 22:00
                 </div>
                 <div className="flex-1">
@@ -624,7 +685,9 @@ export default () => {
               <h2 className="font-bold font-header text-3xl">
                 THURSDAY, OCTOBER 30, 2025 - MAIN EVENT
               </h2>
-              <p className="text-foreground text-2xl mb-4">09:30 - 19:00</p>
+              <p className="text-foreground text-2xl mb-4  tabular-nums">
+                09:30 - 19:00
+              </p>
             </div>
 
             <div className="space-y-4 relative">
@@ -635,8 +698,8 @@ export default () => {
                   key={index}
                   className="rounded-xl border border-accent-foreground bg-background-dimmed p-6 transition-all hover:border-accent-foreground/60 hover:bg-background-rich"
                 >
-                  <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-8">
-                    <div className="font-header text-2xl font-bold text-foreground md:min-w-[120px]">
+                  <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-8 font-header">
+                    <div className="font-header text-2xl font-bold text-foreground md:min-w-[120px]  tabular-nums">
                       {item.time}
                     </div>
                     <div className="flex-1">
@@ -645,19 +708,25 @@ export default () => {
                       </h4>
                       {item.moderator && (
                         <p className="mb-2 text-foreground-dimmed">
-                          <span className="font-semibold">Moderator:</span>{" "}
+                          <span className="font-semibold font-body">
+                            Moderator:
+                          </span>{" "}
                           {item.moderator}
                         </p>
                       )}
                       {item.speakers && (
                         <p className="mb-2 text-foreground-dimmed">
-                          <span className="font-semibold">Speakers:</span>{" "}
+                          <span className="font-semibold  font-body">
+                            Speakers:
+                          </span>{" "}
                           {item.speakers}
                         </p>
                       )}
                       {item.panelists && (
                         <p className="mb-2 text-foreground-dimmed">
-                          <span className="font-semibold">Panelists:</span>{" "}
+                          <span className="font-semibold  font-body">
+                            Panelists:
+                          </span>{" "}
                           {item.panelists}
                         </p>
                       )}
@@ -674,12 +743,14 @@ export default () => {
           </div>
 
           {/* After Party */}
-          <div className="relative my-4">
+          <div className="relative mb-4 mt-16">
             <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
             <h2 className="font-bold font-header text-3xl">
               AFTER PARTY & NETWORKING
             </h2>
-            <p className="text-foreground text-2xl mb-4">18:30 onwards</p>
+            <p className="text-foreground text-2xl mb-4 font-header">
+              18:30 onwards
+            </p>
           </div>
         </div>
       </section>
@@ -840,7 +911,7 @@ const agenda = [
 const tickets = [
   {
     name: "Startup",
-    price: 395.0,
+    price: 50,
     benefits: [
       "2-day access to Slush 2025",
       "Meeting Tool with 400+ pre-bookable tables",
@@ -848,10 +919,11 @@ const tickets = [
       "Mentoring, Investor Office Hours, Stage talks",
       "Founders Day and startup-only Side Events",
     ],
+    href: "https://eventa.al/events/afda1ca3-2385-4b1a-99fc-b39f77b39efa?ticketCode=M25719X",
   },
   {
-    name: "Enterprise",
-    price: 1000.0,
+    name: "Investor",
+    price: 100.0,
     benefits: [
       "2-day access to Slush 2025",
       "Meeting Tool with 400+ pre-bookable tables",
@@ -859,6 +931,7 @@ const tickets = [
       "Mentoring, Investor Office Hours, Stage talks",
       "Founders Day and startup-only Side Events",
     ],
+    href: "https://eventa.al/events/afda1ca3-2385-4b1a-99fc-b39f77b39efa",
   },
   {
     name: "Visitor",
@@ -870,10 +943,11 @@ const tickets = [
       "Mentoring, Investor Office Hours, Stage talks",
       "Founders Day and startup-only Side Events",
     ],
+    href: "https://eventa.al/events/afda1ca3-2385-4b1a-99fc-b39f77b39efa",
   },
   {
     name: "Student",
-    price: 50.0,
+    price: 10.0,
     benefits: [
       "1-day access to Slush 2025",
       "Meeting Tool with 400+ pre-bookable tables",
@@ -881,6 +955,8 @@ const tickets = [
       "Mentoring, Investor Office Hours, Stage talks",
       "Founders Day and startup-only Side Events",
     ],
+    href: "https://www.eventbrite.com/e/tirana-slushd-2025-tickets-1034699250180",
+    cta: "Apply",
   },
 ];
 
