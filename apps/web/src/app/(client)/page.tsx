@@ -94,10 +94,10 @@ export default () => {
                         ? index < 5
                           ? "bg-gradient-to-t from-green-500 to-green-400"
                           : index < 10
-                            ? "bg-gradient-to-t from-yellow-500 to-yellow-400"
-                            : index < 13
-                              ? "bg-gradient-to-t from-orange-500 to-orange-400"
-                              : "bg-gradient-to-t from-red-500 to-red-400"
+                          ? "bg-gradient-to-t from-yellow-500 to-yellow-400"
+                          : index < 13
+                          ? "bg-gradient-to-t from-orange-500 to-orange-400"
+                          : "bg-gradient-to-t from-red-500 to-red-400"
                         : "bg-accent"
                     }`}
                   />
@@ -119,10 +119,10 @@ export default () => {
                       index === 0
                         ? "radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.4), rgba(239, 68, 68, 0.4), transparent 70%)"
                         : index === 1
-                          ? "radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.4), rgba(168, 85, 247, 0.4), transparent 70%)"
-                          : index === 2
-                            ? "radial-gradient(circle at 50% 50%, rgba(34, 197, 94, 0.4), rgba(20, 184, 166, 0.4), transparent 70%)"
-                            : "radial-gradient(circle at 50% 50%, rgba(234, 179, 8, 0.4), rgba(249, 115, 22, 0.4), transparent 70%)",
+                        ? "radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.4), rgba(168, 85, 247, 0.4), transparent 70%)"
+                        : index === 2
+                        ? "radial-gradient(circle at 50% 50%, rgba(34, 197, 94, 0.4), rgba(20, 184, 166, 0.4), transparent 70%)"
+                        : "radial-gradient(circle at 50% 50%, rgba(234, 179, 8, 0.4), rgba(249, 115, 22, 0.4), transparent 70%)",
                   }}
                 />
 
@@ -133,7 +133,7 @@ export default () => {
                       index === 0 && "from-pink-500 to-red-500",
                       index === 1 && "from-blue-500 to-purple-500",
                       index === 2 && "from-green-500 to-teal-500",
-                      index === 3 && "from-yellow-500 to-orange-500",
+                      index === 3 && "from-yellow-500 to-orange-500"
                     )}
                   >
                     <span className="font-bold text-foreground text-xl">
@@ -150,7 +150,7 @@ export default () => {
                     index === 0 && "from-pink-500 to-red-500",
                     index === 1 && "from-blue-500 to-purple-500",
                     index === 2 && "from-green-500 to-teal-500",
-                    index === 3 && "from-yellow-500 to-orange-500",
+                    index === 3 && "from-yellow-500 to-orange-500"
                   )}
                 >
                   <h3 className="text-center font-bold font-header">{name}</h3>
@@ -170,7 +170,7 @@ export default () => {
                       index === 2 &&
                         "border-green-500 from-green-500 to-teal-500",
                       index === 3 &&
-                        "border-yellow-500 from-yellow-500 to-orange-500",
+                        "border-yellow-500 from-yellow-500 to-orange-500"
                     )}
                   >
                     {cta ?? "Buy now"}
@@ -1097,7 +1097,7 @@ const speakers = [
     title: "Head of EBRD in Albania",
     image: "/images/speakers/speaker-33.png",
     description:
-      "Ekaterina Solovova leads the European Bank for Reconstruction and Development’s operations in Albania, where the bank has invested over €2 billion in impactful projects. With more than 20 years’ experience in development finance, she has a proven track record in structuring complex investments, driving sustainable growth and energy-transition initiatives across South-East Europe.",
+      "Ekaterina has 20+ years in development finance and investment. Since July 2021, she has led the EBRD’s Tirana office, expanding support for Albania’s key sectors. She previously held senior roles at EBRD, including Adviser to the President, Head of Resident Office, Principal Risk Officer, and Private Equity team. She’s served on boards of investee companies. The EBRD is a leading international financial institution in Albania, with total net cumulative investments of EUR 2.3 billion in public and private sector projects.",
     index: 3,
   },
   {
