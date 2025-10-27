@@ -1,11 +1,11 @@
 import { cn } from "@zenncore/utils";
+import { Button } from "@zenncore/web/components/button";
 import Image from "next/image";
 import Link from "next/link";
 import { Footer } from "@/component/footer";
 import { NavigationMenu } from "@/component/navigation-menu";
 import { Radient } from "@/component/radient";
 import { Spotlight } from "@/component/spotlight";
-import { Button } from "@zenncore/web/components/button";
 
 export default () => {
   return (
@@ -94,10 +94,10 @@ export default () => {
                         ? index < 5
                           ? "bg-gradient-to-t from-green-500 to-green-400"
                           : index < 10
-                          ? "bg-gradient-to-t from-yellow-500 to-yellow-400"
-                          : index < 13
-                          ? "bg-gradient-to-t from-orange-500 to-orange-400"
-                          : "bg-gradient-to-t from-red-500 to-red-400"
+                            ? "bg-gradient-to-t from-yellow-500 to-yellow-400"
+                            : index < 13
+                              ? "bg-gradient-to-t from-orange-500 to-orange-400"
+                              : "bg-gradient-to-t from-red-500 to-red-400"
                         : "bg-accent"
                     }`}
                   />
@@ -119,10 +119,10 @@ export default () => {
                       index === 0
                         ? "radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.4), rgba(239, 68, 68, 0.4), transparent 70%)"
                         : index === 1
-                        ? "radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.4), rgba(168, 85, 247, 0.4), transparent 70%)"
-                        : index === 2
-                        ? "radial-gradient(circle at 50% 50%, rgba(34, 197, 94, 0.4), rgba(20, 184, 166, 0.4), transparent 70%)"
-                        : "radial-gradient(circle at 50% 50%, rgba(234, 179, 8, 0.4), rgba(249, 115, 22, 0.4), transparent 70%)",
+                          ? "radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.4), rgba(168, 85, 247, 0.4), transparent 70%)"
+                          : index === 2
+                            ? "radial-gradient(circle at 50% 50%, rgba(34, 197, 94, 0.4), rgba(20, 184, 166, 0.4), transparent 70%)"
+                            : "radial-gradient(circle at 50% 50%, rgba(234, 179, 8, 0.4), rgba(249, 115, 22, 0.4), transparent 70%)",
                   }}
                 />
 
@@ -133,14 +133,14 @@ export default () => {
                       index === 0 && "from-pink-500 to-red-500",
                       index === 1 && "from-blue-500 to-purple-500",
                       index === 2 && "from-green-500 to-teal-500",
-                      index === 3 && "from-yellow-500 to-orange-500"
+                      index === 3 && "from-yellow-500 to-orange-500",
                     )}
                   >
                     <span className="font-bold text-foreground text-xl">
                       {name.charAt(0)}
                     </span>
                   </div>
-                  <div className="font-bold font-foreground font-body text-3xl text-foreground">
+                  <div className="font-body font-bold font-foreground text-3xl text-foreground">
                     {price}€
                   </div>
                 </div>
@@ -150,7 +150,7 @@ export default () => {
                     index === 0 && "from-pink-500 to-red-500",
                     index === 1 && "from-blue-500 to-purple-500",
                     index === 2 && "from-green-500 to-teal-500",
-                    index === 3 && "from-yellow-500 to-orange-500"
+                    index === 3 && "from-yellow-500 to-orange-500",
                   )}
                 >
                   <h3 className="text-center font-bold font-header">{name}</h3>
@@ -163,14 +163,14 @@ export default () => {
                 <Link href={href} className="mt-auto">
                   <Button
                     className={cn(
-                      "w-full font-header mt-auto",
-                      index === 0 && "from-pink-500 to-red-500 border-pink-500",
+                      "mt-auto w-full font-header",
+                      index === 0 && "border-pink-500 from-pink-500 to-red-500",
                       index === 1 &&
-                        "from-blue-500 to-purple-500 border-blue-500",
+                        "border-blue-500 from-blue-500 to-purple-500",
                       index === 2 &&
-                        "from-green-500 to-teal-500 border-green-500",
+                        "border-green-500 from-green-500 to-teal-500",
                       index === 3 &&
-                        "from-yellow-500 to-orange-500 border-yellow-500"
+                        "border-yellow-500 from-yellow-500 to-orange-500",
                     )}
                   >
                     {cta ?? "Buy now"}
@@ -180,7 +180,7 @@ export default () => {
             ))}
           </div>
 
-          <p className="mt-8 text-center text-foreground-dimmed text-sm font-header">
+          <p className="mt-8 text-center font-header text-foreground-dimmed text-sm">
             May be limited in availability, or require a separate application or
             registration process.
           </p>
@@ -272,11 +272,11 @@ export default () => {
       </section>
 
       <section
-        className="mx-auto flex max-w-7xl flex-col gap-24 px-8 relative"
+        className="relative mx-auto flex max-w-7xl flex-col gap-24 px-8"
         id="speakers"
       >
-        <Radient className="translate-x-1/2 -z-10 right-1/2 bottom-1/2 -translate-y-1/2 from-[#ddff00]/30 to-[#ddff00]/0" />
-        <Radient className="-translate-x-1/2 -z-10  left-1/2 top-1/2 translate-y-1/2 from-[#00ffee]/30 to-[#00ffee]/0" />
+        <Radient className="-z-10 -translate-y-1/2 right-1/2 bottom-1/2 translate-x-1/2 from-[#ddff00]/30 to-[#ddff00]/0" />
+        <Radient className="-translate-x-1/2 -z-10 top-1/2 left-1/2 translate-y-1/2 from-[#00ffee]/30 to-[#00ffee]/0" />
         <div className="relative">
           <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
           <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl">
@@ -291,7 +291,7 @@ export default () => {
               <div
                 // biome-ignore lint/suspicious/noArrayIndexKey: no better key
                 key={index}
-                className="flex flex-col gap-4 p-4 group"
+                className="group flex flex-col gap-4 p-4"
               >
                 <div className="relative w-full">
                   <div className="-skew-x-3 aspect-square w-full transform bg-gradient-to-br from-yellow-400 via-orange-500 to-red-600 shadow-2xl" />
@@ -301,7 +301,7 @@ export default () => {
                     fill
                     className="absolute inset-0 w-full object-contain grayscale"
                   />
-                  <div className="size-full font-header p-4 absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 size-full bg-black/80">
+                  <div className="absolute inset-0 size-full size-full bg-black/80 p-4 font-header opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     {speaker.description}
                   </div>
                 </div>
@@ -319,10 +319,10 @@ export default () => {
         </div>
       </section>
 
-      <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16 relative">
+      <section className="relative mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16">
         <Spotlight className="h-40 min-h-40" />
         <div className="relative">
-          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
+          <h2 className="mb-2 bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text font-bold font-header text-3xl text-transparent md:text-5xl">
             INVESTORS AT <br />
             <Image
               src="/images/logo.svg"
@@ -336,7 +336,7 @@ export default () => {
         </div>
         <Link
           href={investors[0].href}
-          className="flex flex-col items-center justify-center gap-4 p-4 w-full h-64"
+          className="flex h-64 w-full flex-col items-center justify-center gap-4 p-4"
         >
           <Image
             src={investors[0].image}
@@ -344,7 +344,7 @@ export default () => {
             width={300}
             height={300}
           />
-          <h3 className="text-foreground-dimmed text-lg font-header text-secondary  uppercase">
+          <h3 className="font-header text-foreground-dimmed text-lg text-secondary uppercase">
             Our Lead Investor of the 300K Investment Fund
           </h3>
         </Link>
@@ -354,7 +354,7 @@ export default () => {
               // biome-ignore lint/suspicious/noArrayIndexKey: no better key
               key={index}
               href={investor.href}
-              className="flex flex-col items-center justify-center gap-4 p-4 w-full h-44"
+              className="flex h-44 w-full flex-col items-center justify-center gap-4 p-4"
             >
               <Image
                 src={investor.image}
@@ -371,7 +371,7 @@ export default () => {
         id="partners"
       >
         <div className="relative">
-          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
+          <h2 className="mb-2 bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text font-bold font-header text-3xl text-transparent md:text-5xl">
             STRATEGIC PARTNERS OF <br />
             <Image
               src="/images/logo.svg"
@@ -382,7 +382,7 @@ export default () => {
             />{" "}
             2025
           </h2>
-          <h3 className="text-secondary md:text-lg font-header">
+          <h3 className="font-header text-secondary md:text-lg">
             Shaping impact through strategic partnership.
           </h3>
         </div>
@@ -392,7 +392,7 @@ export default () => {
               // biome-ignore lint/suspicious/noArrayIndexKey: no better key
               key={index}
               href={partner.href}
-              className="flex flex-col items-center justify-center gap-4 p-4 w-full h-44"
+              className="flex h-44 w-full flex-col items-center justify-center gap-4 p-4"
             >
               <Image
                 src={partner.image}
@@ -404,9 +404,9 @@ export default () => {
           ))}
         </div>
       </section>
-      <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16 relative">
+      <section className="relative mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16">
         <div className="relative">
-          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
+          <h2 className="mb-2 bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text font-bold font-header text-3xl text-transparent md:text-5xl">
             Key PARTNERS OF <br />
             <Image
               src="/images/logo.svg"
@@ -417,7 +417,7 @@ export default () => {
             />{" "}
             2025
           </h2>
-          <h3 className="text-secondary text-lg pl-1  font-header">
+          <h3 className="pl-1 font-header text-lg text-secondary">
             Empowering ideas through meaningful support.
           </h3>
         </div>
@@ -427,7 +427,7 @@ export default () => {
               // biome-ignore lint/suspicious/noArrayIndexKey: no better key
               key={index}
               href={partner.href}
-              className="flex flex-col items-center justify-center gap-4 p-4 w-full h-44"
+              className="flex h-44 w-full flex-col items-center justify-center gap-4 p-4"
             >
               <Image
                 src={partner.image}
@@ -442,7 +442,7 @@ export default () => {
       </section>
       <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16">
         <div className="relative">
-          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
+          <h2 className="mb-2 bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text font-bold font-header text-3xl text-transparent md:text-5xl">
             COMMUNITY PARTNERS OF <br />
             <Image
               src="/images/logo.svg"
@@ -453,18 +453,18 @@ export default () => {
             />{" "}
             2025
           </h2>
-          <h3 className="text-secondary text-lg  font-header pl-1">
+          <h3 className="pl-1 font-header text-lg text-secondary">
             Bridging ecosystems through community power.
           </h3>
         </div>
-        <div className="grid grid-cols-2 gap-8 lg:grid-cols-5 relative">
-          <Radient className="translate-x-1/2 -z-10 right-0 top-0 from-secondary/30 to-secondary/0" />
+        <div className="relative grid grid-cols-2 gap-8 lg:grid-cols-5">
+          <Radient className="-z-10 top-0 right-0 translate-x-1/2 from-secondary/30 to-secondary/0" />
           {community.map((partner, index) => (
             <Link
               // biome-ignore lint/suspicious/noArrayIndexKey: no better key
               key={index}
               href={partner.href}
-              className="flex flex-col items-center justify-center gap-4 p-4 w-full h-44"
+              className="flex h-44 w-full flex-col items-center justify-center gap-4 p-4"
             >
               <Image
                 src={partner.image}
@@ -477,14 +477,14 @@ export default () => {
           ))}
         </div>
       </section>
-      <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16 relative">
-        <Radient className="translate-x-1/2 right-1/2 bottom-0 translate-y-1/2 from-primary/30 to-primary/0" />
+      <section className="relative mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16">
+        <Radient className="right-1/2 bottom-0 translate-x-1/2 translate-y-1/2 from-primary/30 to-primary/0" />
         <div className="relative">
-          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
+          <h2 className="mb-2 bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text font-bold font-header text-3xl text-transparent md:text-5xl">
             OUR ESTIMEED <br />
             SPONSORS
           </h2>
-          <h3 className="text-secondary md:text-lg  font-header">
+          <h3 className="font-header text-secondary md:text-lg">
             Dring innovation through shared ambition.
           </h3>
         </div>
@@ -494,7 +494,7 @@ export default () => {
               // biome-ignore lint/suspicious/noArrayIndexKey: no better key
               key={index}
               href={partner.href}
-              className="flex flex-col items-center justify-center gap-4 p-4 w-full h-44"
+              className="flex h-44 w-full flex-col items-center justify-center gap-4 p-4"
             >
               <Image
                 src={partner.image}
@@ -512,11 +512,11 @@ export default () => {
         id="media"
       >
         <div className="relative">
-          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
+          <h2 className="mb-2 bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text font-bold font-header text-3xl text-transparent md:text-5xl">
             OUR PRESS <br />
             PARTNERS
           </h2>
-          <h3 className="text-secondary text-lg font-header">
+          <h3 className="font-header text-lg text-secondary">
             Bringing innovation through shared ambition.
           </h3>
         </div>
@@ -526,7 +526,7 @@ export default () => {
               // biome-ignore lint/suspicious/noArrayIndexKey: no better key
               key={index}
               href={partner.href}
-              className="flex flex-col items-center justify-center gap-4 p-4 w-full h-44 max-h-44"
+              className="flex h-44 max-h-44 w-full flex-col items-center justify-center gap-4 p-4"
             >
               <Image
                 src={partner.image}
@@ -540,11 +540,11 @@ export default () => {
         </div>
       </section>
 
-      <section id="agenda" className=" py-16 relative">
-        <Radient className="-translate-x-1/2 -z-10 left-1/2 top-0 from-[#00ffee]/20 to-[#00ffee]/0" />
+      <section id="agenda" className="relative py-16">
+        <Radient className="-translate-x-1/2 -z-10 top-0 left-1/2 from-[#00ffee]/20 to-[#00ffee]/0" />
         <div className="mx-auto max-w-7xl px-8">
           <div className="relative mb-16">
-            <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
+            <h2 className="mb-2 bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text font-bold font-header text-3xl text-transparent md:text-5xl">
               EVENT AGENDA <br />
               <Image
                 src="/images/logo.svg"
@@ -563,17 +563,17 @@ export default () => {
 
           <div className="mb-12">
             <div className="relative mb-4">
-              <h2 className="mb-2 font-bold font-header text-xl md:text-3xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
+              <h2 className="mb-2 bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text font-bold font-header text-transparent text-xl md:text-3xl">
                 WEDNESDAY, OCTOBER 29 - INVESTOR DAY
               </h2>
             </div>
             <div className="rounded-xl border border-accent-foreground bg-background-dimmed p-6">
               <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-8">
-                <div className="font-header text-2xl font-bold text-foreground md:min-w-[120px] tabular-nums">
+                <div className="font-bold font-header text-2xl text-foreground tabular-nums md:min-w-[120px]">
                   19:00 - 22:00
                 </div>
                 <div className="flex-1">
-                  <h4 className="mb-2 font-header font-bold text-xl text-foreground">
+                  <h4 className="mb-2 font-bold font-header text-foreground text-xl">
                     Dinner with Investors
                   </h4>
                   <p className="text-foreground-dimmed">
@@ -586,33 +586,33 @@ export default () => {
 
           <div>
             <div className="relative mb-4">
-              <h2 className="mb-2 font-bold font-header text-xl md:text-3xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
+              <h2 className="mb-2 bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text font-bold font-header text-transparent text-xl md:text-3xl">
                 THURSDAY, OCTOBER 30, 2025 - MAIN EVENT
               </h2>
-              <p className="mb-2 font-regular font-body text-sm md:text-xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
+              <p className="mb-2 bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text font-body font-regular text-sm text-transparent md:text-xl">
                 09:30 - 19:00
               </p>
             </div>
 
-            <div className="space-y-4 relative">
-              <Radient className="-translate-x-1/2 -z-10 left-0 -bottom-full translate-y-full from-secondary/30 to-secondary/0" />
+            <div className="relative space-y-4">
+              <Radient className="-translate-x-1/2 -z-10 -bottom-full left-0 translate-y-full from-secondary/30 to-secondary/0" />
               {agenda.map((item, index) => (
                 <div
                   // biome-ignore lint/suspicious/noArrayIndexKey: no better key
                   key={index}
                   className="rounded-xl border border-accent-foreground bg-background-dimmed p-6 transition-all hover:border-accent-foreground/60 hover:bg-background-rich"
                 >
-                  <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-8 font-header">
-                    <div className="font-header text-2xl font-bold text-foreground md:min-w-[120px]  tabular-nums">
+                  <div className="flex flex-col gap-4 font-header md:flex-row md:items-start md:gap-8">
+                    <div className="font-bold font-header text-2xl text-foreground tabular-nums md:min-w-[120px]">
                       {item.time}
                     </div>
                     <div className="flex-1">
-                      <h4 className="mb-2 font-header font-bold text-xl text-foreground">
+                      <h4 className="mb-2 font-bold font-header text-foreground text-xl">
                         {item.title}
                       </h4>
                       {item.moderator && (
                         <p className="mb-2 text-foreground-dimmed">
-                          <span className="font-semibold font-body">
+                          <span className="font-body font-semibold">
                             Moderator:
                           </span>{" "}
                           {item.moderator}
@@ -620,7 +620,7 @@ export default () => {
                       )}
                       {item.speakers && (
                         <p className="mb-2 text-foreground-dimmed">
-                          <span className="font-semibold  font-body">
+                          <span className="font-body font-semibold">
                             Speakers:
                           </span>{" "}
                           {item.speakers}
@@ -628,7 +628,7 @@ export default () => {
                       )}
                       {item.panelists && (
                         <p className="mb-2 text-foreground-dimmed">
-                          <span className="font-semibold  font-body">
+                          <span className="font-body font-semibold">
                             Panelists:
                           </span>{" "}
                           {item.panelists}
@@ -647,22 +647,22 @@ export default () => {
           </div>
 
           {/* After Party */}
-          <div className="relative mb-4 mt-16">
-            <h2 className="mb-2 font-bold font-header text-xl md:text-3xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
+          <div className="relative mt-16 mb-4">
+            <h2 className="mb-2 bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text font-bold font-header text-transparent text-xl md:text-3xl">
               AFTER PARTY & NETWORKING
             </h2>
-            <p className="mb-2 font-regular font-body text-sm md:text-xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
+            <p className="mb-2 bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text font-body font-regular text-sm text-transparent md:text-xl">
               18:30 onwards
             </p>
           </div>
         </div>
       </section>
 
-      <section id="startups" className="py-16 relative">
-        <Radient className="translate-x-1/2 right-1/2 top-0 from-primary/20 to-primary/0 -z-10" />
+      <section id="startups" className="relative py-16">
+        <Radient className="-z-10 top-0 right-1/2 translate-x-1/2 from-primary/20 to-primary/0" />
         <div className="mx-auto max-w-7xl px-8">
           <div className="relative mb-16">
-            <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
+            <h2 className="mb-2 bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text font-bold font-header text-3xl text-transparent md:text-5xl">
               PITCH 15 FINALISTS <br />
               <Image
                 src="/images/logo.svg"
@@ -673,7 +673,7 @@ export default () => {
               />{" "}
               2025
             </h2>
-            <p className="text-secondary text-lg font-header">
+            <p className="font-header text-lg text-secondary">
               Meet the semi-finalists competing in our pitch competition
             </p>
           </div>
@@ -690,17 +690,17 @@ export default () => {
               >
                 <div className="flex flex-col gap-3">
                   <div className="flex items-start justify-between gap-4">
-                    <h3 className="font-header font-bold text-xl text-foreground group-hover:text-primary transition-colors">
+                    <h3 className="font-bold font-header text-foreground text-xl transition-colors group-hover:text-primary">
                       {startup.name}
                     </h3>
-                    <span className="text-foreground-dimmed text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-foreground-dimmed text-sm opacity-0 transition-opacity group-hover:opacity-100">
                       →
                     </span>
                   </div>
                   <p className="text-foreground-dimmed text-sm">
                     {startup.founder}
                   </p>
-                  <p className="text-foreground-dimmed text-xs font-mono truncate">
+                  <p className="truncate font-mono text-foreground-dimmed text-xs">
                     {startup.url.replace(/^https?:\/\//, "").replace(/\/$/, "")}
                   </p>
                 </div>
@@ -710,13 +710,13 @@ export default () => {
         </div>
       </section>
 
-      <section className=" py-16 relative">
-        <Radient className="-translate-x-1/2 left-1/2 top-0 from-[#00ffee]/20 to-[#00ffee]/0 -z-10" />
-        <Radient className="-translate-x-1/2 -z-10 left-0 -bottom-full translate-y-full from-secondary/30 to-secondary/0" />
+      <section className="relative py-16">
+        <Radient className="-translate-x-1/2 -z-10 top-0 left-1/2 from-[#00ffee]/20 to-[#00ffee]/0" />
+        <Radient className="-translate-x-1/2 -z-10 -bottom-full left-0 translate-y-full from-secondary/30 to-secondary/0" />
 
         <div className="mx-auto max-w-7xl px-8">
           <div className="relative mb-16">
-            <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
+            <h2 className="mb-2 bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text font-bold font-header text-3xl text-transparent md:text-5xl">
               TOP 50 STARTUPS <br />
               <Image
                 src="/images/logo.svg"
@@ -727,7 +727,7 @@ export default () => {
               />{" "}
               2025
             </h2>
-            <p className="text-secondary text-lg font-">
+            <p className="font- text-lg text-secondary">
               Meet the innovative startups shaping the future
             </p>
           </div>
@@ -743,14 +743,14 @@ export default () => {
                 className="group rounded-xl border border-accent-foreground bg-background-dimmed p-6 transition-all hover:border-accent-foreground/60 hover:bg-background-rich"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="font-header font-bold text-lg text-foreground group-hover:text-primary transition-colors">
+                  <h3 className="font-bold font-header text-foreground text-lg transition-colors group-hover:text-primary">
                     {startup.name}
                   </h3>
-                  <span className="text-foreground-dimmed text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="text-foreground-dimmed text-sm opacity-0 transition-opacity group-hover:opacity-100">
                     →
                   </span>
                 </div>
-                <p className="mt-2 text-foreground-dimmed text-sm font-mono truncate">
+                <p className="mt-2 truncate font-mono text-foreground-dimmed text-sm">
                   {startup.url.replace(/^https?:\/\//, "").replace(/\/$/, "")}
                 </p>
               </Link>
@@ -1292,7 +1292,7 @@ const speakers = [
   //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
   // },
   {
-    name: "IDLIR AHMATI", 
+    name: "IDLIR AHMATI",
     title: "FOUNDER & CEO: PAYSERA ALBANIA",
     index: 27,
     image: "/images/speakers/speaker-24.jpg",
