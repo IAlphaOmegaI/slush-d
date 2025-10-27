@@ -108,8 +108,10 @@ export default () => {
 
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
             {tickets.map(({ name, price, benefits, cta, href }, index) => (
-              <div className="group relative flex h-140 flex-col gap-6 overflow-hidden rounded-xl border border-accent-foreground bg-background-dimmed p-4 font-header transition-all hover:border-opacity-80">
-                {/* Animated radial gradient overlay */}
+              <div
+                key={index}
+                className="group relative flex h-140 flex-col gap-6 overflow-hidden rounded-xl border border-accent-foreground bg-background-dimmed p-4 font-header transition-all hover:border-opacity-80"
+              >
                 <div
                   className="pointer-events-none absolute inset-0 animate-radial-pulse rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                   style={{
@@ -134,7 +136,9 @@ export default () => {
                       index === 3 && "from-yellow-500 to-orange-500"
                     )}
                   >
-                    <span className="font-bold text-foreground text-xl">S</span>
+                    <span className="font-bold text-foreground text-xl">
+                      {name.charAt(0)}
+                    </span>
                   </div>
                   <div className="font-bold font-foreground font-body text-3xl text-foreground">
                     {price}€
@@ -156,7 +160,7 @@ export default () => {
                     <li key={benefit}>• {benefit}</li>
                   ))}
                 </ul>
-                <Link href={href}>
+                <Link href={href} className="mt-auto">
                   <Button
                     className={cn(
                       "w-full font-header mt-auto",
@@ -318,8 +322,7 @@ export default () => {
       <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16 relative">
         <Spotlight className="h-40 min-h-40" />
         <div className="relative">
-          <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
-          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl">
+          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
             INVESTORS AT <br />
             <Image
               src="/images/logo.svg"
@@ -368,8 +371,7 @@ export default () => {
         id="partners"
       >
         <div className="relative">
-          <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
-          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl">
+          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
             STRATEGIC PARTNERS OF <br />
             <Image
               src="/images/logo.svg"
@@ -404,8 +406,7 @@ export default () => {
       </section>
       <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16">
         <div className="relative">
-          <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
-          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl">
+          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
             COMMUNITY PARTNERS OF <br />
             <Image
               src="/images/logo.svg"
@@ -442,8 +443,7 @@ export default () => {
       </section>
       <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16 relative">
         <div className="relative">
-          <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
-          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl">
+          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
             GROWTH PARTNERS OF <br />
             <Image
               src="/images/logo.svg"
@@ -480,8 +480,7 @@ export default () => {
       <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16 relative">
         <Radient className="translate-x-1/2 right-1/2 bottom-0 translate-y-1/2 from-primary/30 to-primary/0" />
         <div className="relative">
-          <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
-          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl">
+          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
             OUR ESTIMEED <br />
             SPONSORS
           </h2>
@@ -513,8 +512,7 @@ export default () => {
         id="media"
       >
         <div className="relative">
-          <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
-          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl">
+          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
             OUR PRESS <br />
             PARTNERS
           </h2>
@@ -542,103 +540,11 @@ export default () => {
         </div>
       </section>
 
-      <section className="bg-background py-16">
-        <div className="mx-auto max-w-7xl px-8">
-          <h2 className="relative mb-20 bg-gradient-to-r from-white to-gray-400 bg-clip-text font-bold font-header text-5xl text-transparent">
-            <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
-            LATEST EVENT NEWS & BLOGS
-          </h2>
-
-          <div className="space-y-12">
-            <div className="flex flex-col items-center gap-8 lg:flex-row">
-              <div className="lg:w-1/2">
-                <div className="relative">
-                  <div className="-skew-x-3 h-80 w-full transform bg-gradient-to-br from-green-400 via-teal-500 to-blue-600 shadow-2xl" />
-                  <div className="absolute inset-0 bg-black/30" />
-                </div>
-              </div>
-              <div className="lg:w-1/2">
-                <h3 className="mb-4 font-bold font-header text-3xl text-foreground">
-                  WHAT SETS SLUSH'D APART FROM OTHER TECH EVENTS?
-                </h3>
-                <p className="text-gray-400 text-lg font-header">Expand+</p>
-              </div>
-            </div>
-
-            {/* Blog 2: Text left, image right */}
-            <div className="flex flex-col items-center gap-8 lg:flex-row-reverse">
-              <div className="lg:w-1/2">
-                <div className="relative">
-                  <div className="h-80 w-full skew-x-3 transform bg-gradient-to-br from-purple-400 via-pink-500 to-red-500 shadow-2xl" />
-                  <div className="absolute inset-0 bg-black/30" />
-                </div>
-              </div>
-              <div className="lg:w-1/2">
-                <h3 className="mb-4 font-bold font-header text-3xl text-foreground">
-                  WHAT COUNTRIES ARE REPRESENTED AT SLUSH'D?
-                </h3>
-                <p className="text-gray-400 text-lg font-header">Expand+</p>
-              </div>
-            </div>
-
-            {/* Blog 3: Image left, text right */}
-            <div className="flex flex-col items-center gap-8 lg:flex-row">
-              <div className="lg:w-1/2">
-                <div className="relative">
-                  <div className="-skew-x-3 h-80 w-full transform bg-gradient-to-br from-yellow-400 via-orange-500 to-red-600 shadow-2xl" />
-                  <div className="absolute inset-0 bg-black/30" />
-                </div>
-              </div>
-              <div className="lg:w-1/2">
-                <h3 className="mb-4 font-bold font-header text-3xl text-foreground">
-                  WHAT INDUSTRIES ARE REPRESENTED AT SLUSH'D?
-                </h3>
-                <p className="text-gray-400 text-lg font-header">Expand+</p>
-              </div>
-            </div>
-
-            {/* Blog 4: Text left, image right */}
-            <div className="flex flex-col items-center gap-8 lg:flex-row-reverse">
-              <div className="lg:w-1/2">
-                <div className="relative">
-                  <div className="h-80 w-full skew-x-3 transform bg-gradient-to-br from-blue-400 via-indigo-500 to-purple-600 shadow-2xl" />
-                  <div className="absolute inset-0 bg-black/30" />
-                </div>
-              </div>
-              <div className="lg:w-1/2">
-                <h3 className="mb-4 font-bold text-3xl text-white font-header">
-                  I DON'T USUALLY ATTEND LARGE-SCALE EVENTS, HOW IS SLUSH'D
-                  DIFFERENT?
-                </h3>
-                <p className="text-gray-400 text-lg font-header">Expand+</p>
-              </div>
-            </div>
-
-            {/* Blog 5: Image left, text right */}
-            <div className="flex flex-col items-center gap-8 lg:flex-row">
-              <div className="lg:w-1/2">
-                <div className="relative">
-                  <div className="-skew-x-3 h-80 w-full transform bg-gradient-to-br from-teal-400 via-cyan-500 to-blue-600 shadow-2xl" />
-                  <div className="absolute inset-0 bg-black/30" />
-                </div>
-              </div>
-              <div className="lg:w-1/2">
-                <h3 className="mb-4 font-bold font-header text-3xl text-foreground">
-                  HOW DOES SLUSH'D ENSURE HIGH RELEVANCE OF ATTENDEES?
-                </h3>
-                <p className="text-gray-400 text-lg">Expand+</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="agenda" className="bg-background py-16 relative">
-        <Radient className="translate-x-1/2 right-1/2 top-0 from-[#00ffee]/20 to-[#00ffee]/0" />
+      <section id="agenda" className=" py-16 relative">
+        <Radient className="-translate-x-1/2 left-1/2 top-0 from-[#00ffee]/20 to-[#00ffee]/0" />
         <div className="mx-auto max-w-7xl px-8">
           <div className="relative mb-16">
-            <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
-            <h2 className="mb-4 font-bold font-header text-5xl">
+            <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
               EVENT AGENDA <br />
               <Image
                 src="/images/logo.svg"
@@ -657,8 +563,7 @@ export default () => {
 
           <div className="mb-12">
             <div className="relative mb-4">
-              <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
-              <h2 className="mb-4 font-bold font-header text-3xl">
+              <h2 className="mb-2 font-bold font-header text-xl md:text-3xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
                 WEDNESDAY, OCTOBER 29 - INVESTOR DAY
               </h2>
             </div>
@@ -681,11 +586,10 @@ export default () => {
 
           <div>
             <div className="relative mb-4">
-              <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
-              <h2 className="font-bold font-header text-3xl">
+              <h2 className="mb-2 font-bold font-header text-xl md:text-3xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
                 THURSDAY, OCTOBER 30, 2025 - MAIN EVENT
               </h2>
-              <p className="text-foreground text-2xl mb-4  tabular-nums">
+              <p className="mb-2 font-regular font-body text-sm md:text-xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
                 09:30 - 19:00
               </p>
             </div>
@@ -744,11 +648,10 @@ export default () => {
 
           {/* After Party */}
           <div className="relative mb-4 mt-16">
-            <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
-            <h2 className="font-bold font-header text-3xl">
+            <h2 className="mb-2 font-bold font-header text-xl md:text-3xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
               AFTER PARTY & NETWORKING
             </h2>
-            <p className="text-foreground text-2xl mb-4 font-header">
+            <p className="mb-2 font-regular font-body text-sm md:text-xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
               18:30 onwards
             </p>
           </div>
@@ -784,7 +687,8 @@ const agenda = [
   {
     time: "09:50 – 10:10",
     title: "Opening Remarks",
-    speakers: "Delina Ibrahimaj - Minister of Economy and Innovation, Arbjan Mazniku - Member of Parliament of Albania, Ekaterina Solovova - Leads EBRD operation in Albania",
+    speakers:
+      "Delina Ibrahimaj - Minister of Economy and Innovation, Arbjan Mazniku - Member of Parliament of Albania, Ekaterina Solovova - Leads EBRD operation in Albania",
     description:
       "Welcoming remarks from key partners and supporters of Tirana Slush'D.",
   },
@@ -863,7 +767,8 @@ const agenda = [
   },
   {
     time: "14:20 – 14:45",
-    title: "Fintech: Breakout Year, Missing Pieces: Completing Albania’s Payments Puzzle",
+    title:
+      "Fintech: Breakout Year, Missing Pieces: Completing Albania’s Payments Puzzle",
     moderator: "Rubin Haxhiymeri - Head of Growth and Product at DigitSapiens",
     panelists:
       "Deivis Shomo - CCO at EasyPay, Elton Collaku - CEO of Union/Western Union, Idlir Ahmeti - Paysera, Rumen Iliev - Partner at LaunchHub Ventures",

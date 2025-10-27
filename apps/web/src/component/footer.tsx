@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { Button } from "@zenncore/web/components/button";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer className="bg-background-dimmed py-20">
+    <footer className="bg-background-dimmed pt-20 pb-4">
       <div className="mx-auto max-w-7xl px-8">
         <div className="mb-16 grid grid-cols-1 gap-12 lg:grid-cols-4">
           <div>
@@ -89,6 +90,18 @@ export const Footer = () => {
             © 2025 TIRANA SLUSH'D. ALL RIGHTS RESERVED.
           </p>
         </div>
+        <Link
+          href="https://www.zennit.dev"
+          className="mx-auto flex items-center justify-center mt-12"
+        >
+          <Image
+            src="/images/footer.svg"
+            className="w-[240px] h-auto"
+            alt="footer"
+            width={100}
+            height={100}
+          />
+        </Link>
       </div>
     </footer>
   );
