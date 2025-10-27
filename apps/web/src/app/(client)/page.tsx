@@ -673,7 +673,7 @@ const agenda = [
   {
     time: "09:30 – 09:35",
     title: "Official Opening with Video",
-    speakers: "Boralda Minaj, Enxhi Minaj, Tai Tran",
+    speakers: "Boralda Minaj, Enxhi Minaj, Tai Tran Co-Founders of Tirana Slush'D",
     description:
       "Official Slush video recap: history, energy Tirana Slush'D & Slush Main Event",
   },
@@ -875,14 +875,14 @@ const speakers = [
     image: "/images/speakers/speaker-25.png",
     description:
       "With nearly 20 years of experience in technology and media communications, Margarita Khartanovich is passionate about building ambitious and impactful projects. Her expertise spans PR, journalism, digital marketing, investor relations, and venture-building. As a co-founder, team leader, and ecosystem operator, Margarita thrives in multi-stakeholder environments, collaborating with diverse teams to bring ideas to life. Driven by a desire to positively impact industries and lives, she specializes in simplifying complex concepts and delivering tangible results through innovation.",
-    index: 7,
+    index: 9,
   },
   {
-    name: "LINN-CECILIE LINNEMANN",
-    title: "Senior Partner: LUMO LABS VC",
-    image: "/images/speakers/speaker-10.png",
+    name: "Ekaterina Solovova",
+    title: "Head of Albania at EBRD",
+    image: "/images/speakers/speaker-33.png",
     description:
-      "Linn-Cecilie is a serial entrepreneur, investor, and impact leader with over two decades of experience building companies, shaping strategies, and driving innovation across climate, health, and education. As Senior Partner at LUMO Labs VC, she backs founders using deep tech, AI, and data-driven solutions to tackle urbanization’s most pressing challenges, from sustainability to healthcare. Previously CEO of Katapult Group, she scaled one of Europe’s most influential impact VCs, mobilizing capital toward climate-positive technologies.",
+      'Ekaterina Solovova leads the European Bank for Reconstruction and Development’s operations in Albania, where the bank has invested over €2 billion in impactful projects. With more than 20 years’ experience in development finance, she has a proven track record in structuring complex investments, driving sustainable growth and energy-transition initiatives across South-East Europe.',
     index: 3,
   },
   {
@@ -892,6 +892,14 @@ const speakers = [
     description:
       "Peter Vesterbacka is a Finnish entrepreneur and innovator best known as the co-founder of Slush, one of the world’s leading startup events, and as the creator of the mobile game Angry Birds during his time at Rovio. Renowned for his visionary approach and bold ideas, Vesterbacka has played a key role in promoting Finland’s startup ecosystem and fostering global entrepreneurship. He continues to champion education, innovation, and cross-border collaboration through various ventures and initiatives.",
     index: 4,
+  },
+  {
+    name: "LINN-CECILIE LINNEMANN",
+    title: "Senior Partner: LUMO LABS VC",
+    image: "/images/speakers/speaker-10.png",
+    description:
+      "Linn-Cecilie is a serial entrepreneur, investor, and impact leader with over two decades of experience building companies, shaping strategies, and driving innovation across climate, health, and education. As Senior Partner at LUMO Labs VC, she backs founders using deep tech, AI, and data-driven solutions to tackle urbanization’s most pressing challenges, from sustainability to healthcare. Previously CEO of Katapult Group, she scaled one of Europe’s most influential impact VCs, mobilizing capital toward climate-positive technologies.",
+    index: 5,
   },
   {
     name: "JULIEN COUSTARY",
@@ -931,7 +939,7 @@ const speakers = [
     image: "/images/speakers/speaker-27.png",
     description:
       "Eli is a finance professional turned venture investor, bringing over a decade of experience in banking regulation, risk management, and financial analysis to her role as Principal at South Central Ventures. Having shaped financial sector policy and supervised banks under EU and Basel frameworks, she now channels that expertise into sourcing, evaluating, and supporting high-potential startups across the Western Balkans. Passionate about fostering entrepreneurship in emerging markets, Eli partners with founders to strengthen their strategies, scale their businesses, and position regional innovations for global impact.",
-    index: 5,
+    index: 7,
   },
   {
     name: "JONI RAKIPI",
@@ -998,6 +1006,14 @@ const speakers = [
       "Mateo bridges cutting-edge neurotechnology, psychiatric research, and entrepreneurship, leading DeepPsy, a deep-tech startup, as Co-Founder and Co-CEO to revolutionize psychiatric treatment through data-driven EEG and ECG analysis. His perspective is shaped by deep academic research at University of Zurich and Ludwig-Maximilians-Universität München, where he published groundbreaking work on deep learning applications in mental health, alongside hands-on experience in medical device regulations and quality standards.",
   },
   {
+    name: "BRISEIDA GJOZA",
+    title: "FOUNDER & CEO: CONSCIESG",
+    image: "/images/speakers/speaker-14.png",
+    description:
+      "Briseida Gjoza is the Founder and CEO of ConsciESG, a fintech pioneering predictive ESG scores that generate financial alpha. With a background in corporate leadership, politics, and sustainable business strategy, she brings a unique blend of strategic vision and hands-on execution to the future of finance and sustainability.",
+    index: 25,
+  },
+  {
     name: "MARJANA PRIFTI SKENDULI",
     title: "FOUNDER: AI ALBANIA",
     image: "/images/speakers/speaker-20.jpg",
@@ -1045,15 +1061,6 @@ const speakers = [
       "Delina Ibrahimaj is an accomplished economist and public leader currently serving as Albania’s Minister of State for Entrepreneurship and Business Climate. With a career spanning over two decades across public administration and finance, she has held key roles including Minister of Finance and Economy, Director General of the Tax Authority, and Director General of INSTAT. Her experience also extends to the Bank of Albania, where she specialized in GDP and labor market analysis.",
     index: 1,
   },
-
-  {
-    name: "BRISEIDA GJOZA",
-    title: "FOUNDER & CEO: CONSCIESG",
-    image: "/images/speakers/speaker-14.png",
-    description:
-      "Briseida Gjoza is the Founder and CEO of ConsciESG, a fintech pioneering predictive ESG scores that generate financial alpha. With a background in corporate leadership, politics, and sustainable business strategy, she brings a unique blend of strategic vision and hands-on execution to the future of finance and sustainability.",
-    index: 9,
-  },
   {
     name: "ADAM DURICA",
     title: "INVESTMENT MANAFER: ZERO ONE HUNDRED",
@@ -1072,7 +1079,7 @@ const speakers = [
   {
     name: "IDLIR AHMATI",
     title: "FOUNDER & CEO: PAYSERA ALBANIA",
-    index: 25,
+    index: 27,
     image: "/images/speakers/speaker-24.jpg",
     description:
       "Idlir Ahmati is the Founder and CEO of Paysera Albania, a leading fintech company revolutionizing digital payments and financial accessibility in the country. With over 15 years of experience across finance, telecommunications, and technology, he has held executive roles at Kredo.al, Pay and Go, and iMoto Albania, as well as advisory positions in the private sector.",
@@ -1080,7 +1087,7 @@ const speakers = [
   {
     name: "SHEFQET AVDULLAU",
     title: "ANGEL INVESTOR, ADVISOR AND MENTOR",
-    index: 25,
+    index: 27,
     image: "/images/speakers/speaker-18.jpg",
     description:
       "Shefqet Avdullau is an angel investor, board advisor, and mentor with a portfolio of 15 startup investments and two successful exits across the U.S. and U.K. A former software engineer turned serial entrepreneur, he has founded, scaled, and exited multiple ventures before focusing on investing in disruptive technologies. His investment interests span Fintech, Adtech, and Healthtech, primarily targeting B2B SaaS and AI-driven innovations.",
@@ -1088,7 +1095,7 @@ const speakers = [
   {
     name: "DEIVIS SHOMO",
     title: "CHEIF COMMERCIAL OFFICER: EASYPAY ALBANIA",
-    index: 25,
+    index: 28,
     image: "/images/speakers/speaker-16.jpg",
     description:
       "Deivis Shomo is the Chief Commercial Officer at EasyPay, Albania’s pioneering fintech company, where he drives strategic growth and innovation in digital financial services. Based in Vienna, he is also the Co-founder and CFO of CityRiddler, a tourism-tech startup creating personalized city experiences through interactive riddles. A member of the Sigma Squared Society, Deivis is part of a global network of young founders shaping the future of entrepreneurship.",
@@ -1096,7 +1103,7 @@ const speakers = [
   {
     name: "BRENTON BËNJA",
     title: "FOUNDER & EDITOR IN CHIEF: GEEKROOM ALBANIA",
-    index: 25,
+    index: 29,
     image: "/images/speakers/speaker-11.jpg",
     description:
       "Brenton Bënja is the Founder and Editor-in-Chief of Geek Room Albania, the country’s leading digital platform for technology news and insights. Since 2016, he has built Geek Room into a trusted source with over 110,000 followers, delivering daily articles and videos on the latest in gadgets, software, and emerging tech trends. Alongside his entrepreneurial work, Brenton serves as Web and Social Media Manager at the European Union Delegation to Albania, bringing strategic communication expertise to international initiatives.",
@@ -1104,7 +1111,7 @@ const speakers = [
   {
     name: "ELTON ÇOLLAKU",
     title: "CEO: FINANCIAL UNION ALBANIA",
-    index: 25,
+    index: 26,
     image: "/images/speakers/speaker-21.jpg",
     description:
       "Elton Collaku is the CEO of Financial Union Tirana (UFT), the exclusive agent of Western Union in Albania since 1995, also operating across Kosovo, North Macedonia, Switzerland, and Croatia. With over 18 years of leadership at the helm, he has driven UFT’s growth into one of the region’s most trusted financial service providers, offering fast, safe, and reliable money transfer solutions.",
