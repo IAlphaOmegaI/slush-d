@@ -275,8 +275,8 @@ export default () => {
         className="mx-auto flex max-w-7xl flex-col gap-24 px-8 relative"
         id="speakers"
       >
-        <Radient className="translate-x-1/2 right-1/2 bottom-1/2 -translate-y-1/2 from-[#ddff00]/30 to-[#ddff00]/0" />
-        <Radient className="-translate-x-1/2 left-1/2 top-1/2 translate-y-1/2 from-[#00ffee]/30 to-[#00ffee]/0" />
+        <Radient className="translate-x-1/2 -z-10 right-1/2 bottom-1/2 -translate-y-1/2 from-[#ddff00]/30 to-[#ddff00]/0" />
+        <Radient className="-translate-x-1/2 -z-10  left-1/2 top-1/2 translate-y-1/2 from-[#00ffee]/30 to-[#00ffee]/0" />
         <div className="relative">
           <div className="absolute left-0 z-20 h-full w-1/2 bg-gradient-to-r from-background to-background/0 opacity-80" />
           <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl">
@@ -382,7 +382,7 @@ export default () => {
             />{" "}
             2025
           </h2>
-          <h3 className="text-green-400 md:text-lg font-header">
+          <h3 className="text-secondary md:text-lg font-header">
             Shaping impact through strategic partnership.
           </h3>
         </div>
@@ -422,7 +422,7 @@ export default () => {
           </h3>
         </div>
         <div className="grid grid-cols-2 gap-8 lg:grid-cols-5 relative">
-          <Radient className="translate-x-1/2 right-0 top-0 from-secondary/30 to-secondary/0" />
+          <Radient className="translate-x-1/2 -z-10 right-0 top-0 from-secondary/30 to-secondary/0" />
           {community.map((partner, index) => (
             <Link
               // biome-ignore lint/suspicious/noArrayIndexKey: no better key
@@ -484,7 +484,7 @@ export default () => {
             OUR ESTIMEED <br />
             SPONSORS
           </h2>
-          <h3 className="text-green-400 md:text-lg  font-header">
+          <h3 className="text-secondary md:text-lg  font-header">
             Dring innovation through shared ambition.
           </h3>
         </div>
@@ -516,7 +516,7 @@ export default () => {
             OUR PRESS <br />
             PARTNERS
           </h2>
-          <h3 className="text-secondary text-lg pl-1  font-header">
+          <h3 className="text-secondary text-lg font-header">
             Bringing innovation through shared ambition.
           </h3>
         </div>
@@ -541,7 +541,7 @@ export default () => {
       </section>
 
       <section id="agenda" className=" py-16 relative">
-        <Radient className="-translate-x-1/2 left-1/2 top-0 from-[#00ffee]/20 to-[#00ffee]/0" />
+        <Radient className="-translate-x-1/2 -z-10 left-1/2 top-0 from-[#00ffee]/20 to-[#00ffee]/0" />
         <div className="mx-auto max-w-7xl px-8">
           <div className="relative mb-16">
             <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
@@ -595,7 +595,7 @@ export default () => {
             </div>
 
             <div className="space-y-4 relative">
-              <Radient className="-translate-x-1/2 left-0 -bottom-full translate-y-full from-secondary/30 to-secondary/0" />
+              <Radient className="-translate-x-1/2 -z-10 left-0 -bottom-full translate-y-full from-secondary/30 to-secondary/0" />
               {agenda.map((item, index) => (
                 <div
                   // biome-ignore lint/suspicious/noArrayIndexKey: no better key
@@ -658,10 +658,224 @@ export default () => {
         </div>
       </section>
 
+      <section id="startups" className="py-16 relative">
+        <Radient className="translate-x-1/2 right-1/2 top-0 from-primary/20 to-primary/0 -z-10" />
+        <div className="mx-auto max-w-7xl px-8">
+          <div className="relative mb-16">
+            <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
+              PITCH 15 FINALISTS <br />
+              <Image
+                src="/images/logo.svg"
+                alt="logo"
+                className="inline-block"
+                width={320}
+                height={100}
+              />{" "}
+              2025
+            </h2>
+            <p className="text-secondary text-lg font-header">
+              Meet the semi-finalists competing in our pitch competition
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {pitch15.map((startup, index) => (
+              <Link
+                // biome-ignore lint/suspicious/noArrayIndexKey: no better key
+                key={index}
+                href={startup.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-xl border border-accent-foreground bg-background-dimmed p-6 transition-all hover:border-accent-foreground/60 hover:bg-background-rich"
+              >
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="font-header font-bold text-xl text-foreground group-hover:text-primary transition-colors">
+                      {startup.name}
+                    </h3>
+                    <span className="text-foreground-dimmed text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                      →
+                    </span>
+                  </div>
+                  <p className="text-foreground-dimmed text-sm">
+                    {startup.founder}
+                  </p>
+                  <p className="text-foreground-dimmed text-xs font-mono truncate">
+                    {startup.url.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className=" py-16 relative">
+        <Radient className="-translate-x-1/2 left-1/2 top-0 from-[#00ffee]/20 to-[#00ffee]/0 -z-10" />
+        <Radient className="-translate-x-1/2 -z-10 left-0 -bottom-full translate-y-full from-secondary/30 to-secondary/0" />
+
+        <div className="mx-auto max-w-7xl px-8">
+          <div className="relative mb-16">
+            <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
+              TOP 50 STARTUPS <br />
+              <Image
+                src="/images/logo.svg"
+                alt="logo"
+                className="inline-block"
+                width={320}
+                height={100}
+              />{" "}
+              2025
+            </h2>
+            <p className="text-secondary text-lg font-">
+              Meet the innovative startups shaping the future
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {pitch50.map((startup, index) => (
+              <Link
+                // biome-ignore lint/suspicious/noArrayIndexKey: no better key
+                key={index}
+                href={startup.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-xl border border-accent-foreground bg-background-dimmed p-6 transition-all hover:border-accent-foreground/60 hover:bg-background-rich"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <h3 className="font-header font-bold text-lg text-foreground group-hover:text-primary transition-colors">
+                    {startup.name}
+                  </h3>
+                  <span className="text-foreground-dimmed text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                    →
+                  </span>
+                </div>
+                <p className="mt-2 text-foreground-dimmed text-sm font-mono truncate">
+                  {startup.url.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
 };
+
+const pitch15 = [
+  {
+    name: "Katalogim",
+    founder: "Klaudia Malutaj",
+    url: "http://www.katalogim.com",
+  },
+  { name: "Doll'App", founder: "Aneida Bicja", url: "http://www.dollapp.co" },
+  {
+    name: "teracrowd",
+    founder: "Valer Pinderi",
+    url: "http://www.teracrowd.com",
+  },
+  { name: "LIST ALBANIA", founder: "Fabio LEKA", url: "http://www.list.al" },
+  { name: "PayStorm AI", founder: "Synim Selimi", url: "https://paystorm.ai" },
+  {
+    name: "Petka Animal Care",
+    founder: "Armela Vogli",
+    url: "http://petka.online",
+  },
+  { name: "tetregu", founder: "Iseld Muca", url: "https://tetregu.al" },
+  {
+    name: "Unita Worldwide",
+    founder: "Endi Haxhi",
+    url: "https://unitaworldwide.com/",
+  },
+  { name: "Me Zemër", founder: "Ilda Hila", url: "http://www.mezemer.com" },
+  { name: "LekoTech", founder: "Nikolin Ngjela", url: "https://lekotech.com/" },
+  {
+    name: "Great Shift",
+    founder: "Domenico Pinto, Federico Violante",
+    url: "https://great-shift.com/",
+  },
+  {
+    name: "Pronto Korrier",
+    founder: "Jorida Durmishaj",
+    url: "https://prontokorrier.al",
+  },
+  {
+    name: "EasyBook AI",
+    founder: "Brajan Osmëni",
+    url: "https://www.easybook.ai/",
+  },
+  {
+    name: "Rubicon (Pago)",
+    founder: "Bledar Harizi",
+    url: "http://www.pago.al",
+  },
+  {
+    name: "Rovigo Solutions",
+    founder: "Sildi Mustafa",
+    url: "https://rovigosolutions.co.uk/",
+  },
+];
+
+const pitch50 = [
+  { name: "PayStorm AI", url: "https://paystorm.ai" },
+  { name: "FinEd", url: "https://financefined.vercel.app/" },
+  {
+    name: "Konero Group Limited - SciFruVeg Project",
+    url: "http://www.konero.co.uk",
+  },
+  { name: "Greecon", url: "http://greecon.co" },
+  { name: "Tika Studios", url: "https://tikastudios.al/" },
+  { name: "EasyBook AI", url: "https://www.easybook.ai/" },
+  { name: "Great Shift", url: "https://great-shift.com/" },
+  { name: "BookMyVideo", url: "http://bookmyvideo.com" },
+  { name: "teracrowd", url: "http://www.teracrowd.com" },
+  { name: "Eagle Ai", url: "http://www.eagleai.com.al" },
+  { name: "XY CYBER", url: "http://www.xy-cyber.com" },
+  { name: "Shirel Organic", url: "http://www.shirelorganic.com" },
+  { name: "Intelligent Light System", url: "http://www.shpe.al" },
+  { name: "tetregu", url: "https://tetregu.al" },
+  { name: "Unita Albania", url: "https://unitaworldwide.com/" },
+  { name: "LekoTech", url: "https://lekotech.com/" },
+  { name: "TrueCall", url: "http://lietome.ai" },
+  { name: "Rovigo Solutions", url: "https://rovigosolutions.co.uk/" },
+  { name: "DARN", url: "http://darn.dev" },
+  { name: "Creatic", url: "https://creaticapp.com/" },
+  { name: "AVA", url: "http://stivesb.com" },
+  { name: "Me Zemer", url: "http://www.mezemer.com" },
+  { name: "Zeevou", url: "https://zeevou.com" },
+  { name: "Holos Health", url: "https://holoshealth.eu/" },
+  { name: "Supertekniku Repair sh.p.k", url: "http://www.Supertekniku.com" },
+  { name: "Hôver", url: "http://myhover.store" },
+  { name: "VrapOn Taxi App", url: "http://www.vrapon.al" },
+  { name: "Purveyor", url: "https://purveyor.al/" },
+  {
+    name: "The Albanian Language Autocorrect Tool",
+    url: "http://www.autokorrektori.al",
+  },
+  { name: "Rubicon sh.a (Pago)", url: "http://www.pago.al" },
+  { name: "iNegotio", url: "http://www.inegotio.com" },
+  { name: "Salvage", url: "http://www.ocistimo.me" },
+  { name: "Katalogim", url: "http://www.katalogim.com" },
+  { name: "Talnets", url: "https://talnets.ch" },
+  { name: "ClearMind", url: "https://clearmind.page" },
+  { name: "KidoCare", url: "https://www.kidocare.al" },
+  { name: "Digital Roots", url: "http://www.droots.org" },
+  { name: "Avenirs AI", url: "https://avenirs.co/" },
+  { name: "SunWave", url: "http://www.sunwave.group" },
+  { name: "Doll'App", url: "http://www.dollapp.co" },
+  { name: "n'Arte sh.p.k. startup", url: "http://narte.net" },
+  { name: "Fraktal", url: "http://fraktal.al" },
+  { name: "LIST ALBANIA", url: "http://www.list.al" },
+  { name: "SPORTISTI", url: "https://sportisti.al/" },
+  { name: "Rinora", url: "http://www.rinorabioclean.com" },
+  { name: "Medapp", url: "http://medapp.space" },
+  { name: "Pronto Korrier", url: "https://prontokorrier.al" },
+  { name: "Petka Animal Care", url: "http://petka.online" },
+  { name: "Beachmaster", url: "https://beachmaster.io/" },
+  { name: "EDULink", url: "https://coddyschooltirana.com/" },
+];
 
 const agenda = [
   {
@@ -689,7 +903,7 @@ const agenda = [
     time: "09:50 – 10:10",
     title: "Opening Remarks",
     speakers:
-      "Delina Ibrahimaj - Minister of Economy and Innovation, Arbjan Mazniku - Member of Parliament of Albania, Ekaterina Solovova - Leads EBRD operation in Albania",
+      "Delina Ibrahimaj - Minister of Economy and Innovation, Arbjan Mazniku - Member of Parliament of Albania, Ekaterina Solovova - Head of EBRD in Albania",
     description:
       "Welcoming remarks from key partners and supporters of Tirana Slush'D.",
   },
@@ -880,7 +1094,7 @@ const speakers = [
   },
   {
     name: "Ekaterina Solovova",
-    title: "Head of Albania at EBRD",
+    title: "Head of EBRD in Albania",
     image: "/images/speakers/speaker-33.png",
     description:
       "Ekaterina Solovova leads the European Bank for Reconstruction and Development’s operations in Albania, where the bank has invested over €2 billion in impactful projects. With more than 20 years’ experience in development finance, she has a proven track record in structuring complex investments, driving sustainable growth and energy-transition initiatives across South-East Europe.",

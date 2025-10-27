@@ -90,9 +90,10 @@ export const Footer = () => {
             © 2025 TIRANA SLUSH'D. ALL RIGHTS RESERVED.
           </p>
         </div>
+        <div className="mt-8 h-px bg-accent-foreground" />
         <Link
           href="https://www.zennit.dev"
-          className="mx-auto flex items-center justify-center mt-12"
+          className="mx-auto flex items-center justify-center mt-4"
         >
           <Image
             src="/images/footer.svg"

@@ -14,6 +14,7 @@ export const NavigationMenu = () => {
     { href: "#partners", label: "PARTNERS" },
     { href: "#media", label: "MEDIA" },
     { href: "#agenda", label: "AGENDA" },
+    { href: "#startups", label: "STARTUPS" },
   ];
 
   return (
