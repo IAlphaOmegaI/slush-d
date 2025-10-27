@@ -673,7 +673,8 @@ const agenda = [
   {
     time: "09:30 – 09:35",
     title: "Official Opening with Video",
-    speakers: "Boralda Minaj, Enxhi Minaj, Tai Tran Co-Founders of Tirana Slush'D",
+    speakers:
+      "Boralda Minaj, Enxhi Minaj, Tai Tran Co-Founders of Tirana Slush'D",
     description:
       "Official Slush video recap: history, energy Tirana Slush'D & Slush Main Event",
   },
@@ -809,7 +810,7 @@ const agenda = [
     title: "Awards Ceremony & Closing",
     speakers: "Antti Rahikka - Director of Business Finland CEE",
     description:
-      "Announcement of winners: Investor Prize (€300,000), 7 tickets to Slush Finland, and unconditional Prize (€30,000). Thanks from organizers and jury.",
+      "Announcement of winners: Investor Prize (€300,000) and 7 tickets to Slush Finland. Thanks from organizers and jury.",
   },
 ];
 
@@ -882,7 +883,7 @@ const speakers = [
     title: "Head of Albania at EBRD",
     image: "/images/speakers/speaker-33.png",
     description:
-      'Ekaterina Solovova leads the European Bank for Reconstruction and Development’s operations in Albania, where the bank has invested over €2 billion in impactful projects. With more than 20 years’ experience in development finance, she has a proven track record in structuring complex investments, driving sustainable growth and energy-transition initiatives across South-East Europe.',
+      "Ekaterina Solovova leads the European Bank for Reconstruction and Development’s operations in Albania, where the bank has invested over €2 billion in impactful projects. With more than 20 years’ experience in development finance, she has a proven track record in structuring complex investments, driving sustainable growth and energy-transition initiatives across South-East Europe.",
     index: 3,
   },
   {
