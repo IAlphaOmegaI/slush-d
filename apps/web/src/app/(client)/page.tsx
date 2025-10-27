@@ -404,6 +404,42 @@ export default () => {
           ))}
         </div>
       </section>
+      <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16 relative">
+        <div className="relative">
+          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
+            Key PARTNERS OF <br />
+            <Image
+              src="/images/logo.svg"
+              alt="logo"
+              className="inline-block"
+              width={320}
+              height={100}
+            />{" "}
+            2025
+          </h2>
+          <h3 className="text-secondary text-lg pl-1  font-header">
+            Empowering ideas through meaningful support.
+          </h3>
+        </div>
+        <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
+          {growth.map((partner, index) => (
+            <Link
+              // biome-ignore lint/suspicious/noArrayIndexKey: no better key
+              key={index}
+              href={partner.href}
+              className="flex flex-col items-center justify-center gap-4 p-4 w-full h-44"
+            >
+              <Image
+                src={partner.image}
+                alt="investor"
+                width={300}
+                height={300}
+                className="brightness-0 invert"
+              />
+            </Link>
+          ))}
+        </div>
+      </section>
       <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16">
         <div className="relative">
           <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
@@ -424,42 +460,6 @@ export default () => {
         <div className="grid grid-cols-2 gap-8 lg:grid-cols-5 relative">
           <Radient className="translate-x-1/2 right-0 top-0 from-secondary/30 to-secondary/0" />
           {community.map((partner, index) => (
-            <Link
-              // biome-ignore lint/suspicious/noArrayIndexKey: no better key
-              key={index}
-              href={partner.href}
-              className="flex flex-col items-center justify-center gap-4 p-4 w-full h-44"
-            >
-              <Image
-                src={partner.image}
-                alt="investor"
-                width={300}
-                height={300}
-                className="brightness-0 invert"
-              />
-            </Link>
-          ))}
-        </div>
-      </section>
-      <section className="mx-auto flex max-w-7xl flex-col gap-12 px-8 py-16 relative">
-        <div className="relative">
-          <h2 className="mb-2 font-bold font-header text-3xl md:text-5xl bg-gradient-to-r from-foreground/20 to-foreground bg-clip-text text-transparent">
-            GROWTH PARTNERS OF <br />
-            <Image
-              src="/images/logo.svg"
-              alt="logo"
-              className="inline-block"
-              width={320}
-              height={100}
-            />{" "}
-            2025
-          </h2>
-          <h3 className="text-secondary text-lg pl-1  font-header">
-            Empowering ideas through meaningful support.
-          </h3>
-        </div>
-        <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
-          {growth.map((partner, index) => (
             <Link
               // biome-ignore lint/suspicious/noArrayIndexKey: no better key
               key={index}
@@ -1210,14 +1210,6 @@ const community = [
 
 const growth = [
   {
-    href: "https://www.upay.al/",
-    image: "/images/partners/partner-17.png",
-  },
-  {
-    href: "https://www.visitluxembourg.com/",
-    image: "/images/partners/partner-14.svg",
-  },
-  {
     href: "https://www.eebrd.com/",
     image: "/images/partners/partner-16.png",
   },
@@ -1229,6 +1221,14 @@ const growth = [
   {
     href: "https://www.wbif.eu/wb-edif",
     image: "/images/partners/partner-18.png",
+  },
+  {
+    href: "https://www.upay.al/",
+    image: "/images/partners/partner-17.png",
+  },
+  {
+    href: "https://www.visitluxembourg.com/",
+    image: "/images/partners/partner-14.svg",
   },
   {
     href: "https://www.eit-ris.eu/al/",
