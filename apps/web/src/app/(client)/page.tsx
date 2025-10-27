@@ -772,7 +772,7 @@ const agenda = [
       "Fintech: Breakout Year, Missing Pieces: Completing Albania’s Payments Puzzle",
     moderator: "Rubin Haxhiymeri - Head of Growth and Product at DigitSapiens",
     panelists:
-      "Deivis Shomo - CCO at EasyPay, Elton Collaku - CEO of Union/Western Union, Idlir Ahmeti - Paysera, Rumen Iliev - Partner at LaunchHub Ventures",
+      "Deivis Shomo - CCO at EasyPay, Elton Collaku - CEO of Union/Western Union, Idlir Ahmati - Paysera, Rumen Iliev - Partner at LaunchHub Ventures",
     description:
       "The future of financial technology in Albania and the region.",
   },
@@ -1078,7 +1078,7 @@ const speakers = [
   //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
   // },
   {
-    name: "IDLIR AHMATI",
+    name: "IDLIR AHMATI", 
     title: "FOUNDER & CEO: PAYSERA ALBANIA",
     index: 27,
     image: "/images/speakers/speaker-24.jpg",
